@@ -1,12 +1,47 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './App.css';
 import SocialLinks from './components/SocialLinks';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Background from './media/bg.jpg';
 import Logo from './media/4a8dfe302137ea75d20d9e9e23a46c47_taal-volcano-tagaytay-vacation-house-in-philippines-tagaytay-vacation-house-clipart_2548-1482.svg';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+      firstName: '',
+      lastName: '',
+      email: ''
+    };
+  }
+
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  };
+
+  firstNameChange = event => {
+    this.setState({
+      firstName: event.target.value
+    });
+  };
+
+  lastNameChange = event => {
+    this.setState({
+      lastName: event.target.value
+    });
+  };
+
+  emailChange = event => {
+    this.setState({
+      email: event.target.value
+    });
+    console.log(this.state.email);
+  };
+
   render() {
     return (
       <div>
@@ -17,9 +52,39 @@ class App extends Component {
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
             Our website is under construciton. we are working very hard to give you the best experience.
           </p>
-          <Button outline color="info">
+          <Button outline color="info" onClick={this.toggle}>
             Subscribe
           </Button>
+          <Modal isOpen={this.state.modal}>
+            <ModalHeader style={{ textTransform: 'uppercase' }} toggle={this.toggle}>
+              Subscribe via email
+            </ModalHeader>
+            <ModalBody>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <input
+                  onChange={this.firstNameChange}
+                  style={{ width: '48%', height: '36px', paddingLeft: '5px' }}
+                  placeholder="First Name"
+                />
+                <input
+                  onChange={this.lastNameChange}
+                  style={{ width: '48%', height: '36px', paddingLeft: '5px' }}
+                  placeholder="Last Name"
+                />
+              </div>
+              <input
+                onChange={this.emailChange}
+                type="email"
+                placeholder="Email"
+                style={{ width: '100%', height: '36px', paddingLeft: '5px', marginTop: '5px' }}
+              />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={this.toggle}>
+                Subscribe
+              </Button>{' '}
+            </ModalFooter>
+          </Modal>
         </div>
         <SocialLinks />
       </div>
