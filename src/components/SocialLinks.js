@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
+import Instagram from '../media/ig.png';
 
 class SocialLinks extends Component {
   render() {
     return (
       <div>
-        <ul style={{ display: 'flex', flexDirection: 'row', listStyle: 'none', marginTop: '-100px', color: 'white' }}>
-          <li>Instagram</li>
-          <li>Facebook</li>
-        </ul>
+        <h1>Hello</h1>
       </div>
     );
   }
