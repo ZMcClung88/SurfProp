@@ -4,3 +4,9 @@ body {
   font-family: sans-serif;
   height: 100%;
 }
+
+@media (min-width: 462px) {
+  h1 {
+    font-size: 10px;
+  }
+}

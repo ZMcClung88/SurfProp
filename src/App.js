@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './App.css';
 import SocialLinks from './components/SocialLinks';
 // import Navbar from './components/Navbar';
 import Background from './media/bg.jpg';
 import Logo from './media/4a8dfe302137ea75d20d9e9e23a46c47_taal-volcano-tagaytay-vacation-house-in-philippines-tagaytay-vacation-house-clipart_2548-1482.svg';
+// import config from './config';
+import MediaQuery from 'react-responsive';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +18,19 @@ class App extends Component {
       lastName: '',
       email: ''
     };
+  }
+
+  componentDidMount() {
+    const config = {
+      apiKey: 'AIzaSyC8SqgnNwzMufdXxzq5gfMrDHpbXp56X5E',
+      authDomain: 'surfprop-42da7.firebaseapp.com',
+      databaseURL: 'https://surfprop-42da7.firebaseio.com',
+      projectId: 'surfprop-42da7',
+      storageBucket: 'surfprop-42da7.appspot.com',
+      messagingSenderId: '975203789447'
+    };
+
+    firebase.initializeApp(config);
   }
 
   toggle = () => {
@@ -42,19 +58,34 @@ class App extends Component {
     console.log(this.state.email);
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.firebase.push({
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email
+    });
+  };
+
   render() {
     return (
       <div>
         {/* <Navbar /> */}
         <div style={styles.backgroundStyle}>
           {/* <div style={styles.logoStyle} /> */}
-          <h1 style={{ fontSize: '66px', letterSpacing: '6px' }}>Coming Soon</h1>
+          <MediaQuery query="(min-device-width: 462px)">
+            <h1 style={{ fontSize: '66px', letterSpacing: '6px' }}>Coming Soon</h1>
+          </MediaQuery>
+          <MediaQuery query="(max-device-width: 461px)">
+            <h1 style={{ fontSize: '33px', letterSpacing: '6px' }}>Coming Soon</h1>
+          </MediaQuery>
+
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
             Our website is under construciton. we are working very hard to give you the best experience.
           </p>
-          <Button outline color="info" onClick={this.toggle}>
+          {/* <Button outline color="info" onClick={this.toggle}>
             Subscribe
-          </Button>
+          </Button> */}
           <Modal isOpen={this.state.modal}>
             <ModalHeader style={{ textTransform: 'uppercase' }} toggle={this.toggle}>
               Subscribe via email
