@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './App.css';
 import SocialLinks from './components/SocialLinks';
+// import LoginForm from './components/LoginForm';
 // import Navbar from './components/Navbar';
 import Background from './media/bg.jpg';
 import Logo from './media/4a8dfe302137ea75d20d9e9e23a46c47_taal-volcano-tagaytay-vacation-house-in-philippines-tagaytay-vacation-house-clipart_2548-1482.svg';
@@ -83,9 +84,9 @@ class App extends Component {
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
             Our website is under construciton. we are working very hard to give you the best experience.
           </p>
-          {/* <Button outline color="info" onClick={this.toggle}>
+          <Button outline color="info" onClick={this.toggle}>
             Subscribe
-          </Button> */}
+          </Button>
           <Modal isOpen={this.state.modal}>
             <ModalHeader style={{ textTransform: 'uppercase' }} toggle={this.toggle}>
               Subscribe via email
@@ -118,6 +119,7 @@ class App extends Component {
           </Modal>
         </div>
         <SocialLinks />
+        {/* <LoginForm /> */}
       </div>
     );
   }
