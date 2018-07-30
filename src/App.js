@@ -75,16 +75,16 @@ class App extends Component {
         <div style={styles.backgroundStyle}>
           {/* <div style={styles.logoStyle} /> */}
           <MediaQuery query="(min-device-width: 462px)">
-            <h1 style={{ fontSize: '66px', letterSpacing: '6px' }}>Coming Soon</h1>
+            <h1 style={{ fontSize: '66px', letterSpacing: '6px' }}>Coming Soon!</h1>
           </MediaQuery>
           <MediaQuery query="(max-device-width: 461px)">
-            <h1 style={{ fontSize: '33px', letterSpacing: '6px' }}>Coming Soon</h1>
+            <h1 style={{ fontSize: '33px', letterSpacing: '6px' }}>Coming Soon!</h1>
           </MediaQuery>
 
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
-            Our website is under construciton. we are working very hard to give you the best experience.
+            Our website is under construciton. We are working very hard to give you the best experience.
           </p>
-          <Button outline color="info" onClick={this.toggle}>
+          {/* <Button outline color="info" onClick={this.toggle}>
             Subscribe
           </Button>
           <Modal isOpen={this.state.modal}>
@@ -116,7 +116,7 @@ class App extends Component {
                 Subscribe
               </Button>{' '}
             </ModalFooter>
-          </Modal>
+          </Modal> */}
         </div>
         <SocialLinks />
         {/* <LoginForm /> */}
@@ -147,11 +147,12 @@ const styles = {
     backgroundSize: 'cover',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
-    color: '#fff',
+    color: 'grey',
+    mixBlendMode: 'difference',
     letterSpacing: '4px',
-    marginBottom: '25px'
+    paddingTop: '25px'
 
     // textTransform: 'uppercase'
   }
