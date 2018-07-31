@@ -15,8 +15,6 @@ class App extends Component {
     super(props);
     this.state = {
       modal: false,
-      firstName: '',
-      lastName: '',
       email: ''
     };
   }
@@ -32,23 +30,17 @@ class App extends Component {
     };
 
     firebase.initializeApp(config);
+
+    firebase.auth().signInAnonymously();
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      console.log('here', firebaseUser);
+    });
   }
 
   toggle = () => {
     this.setState({
       modal: !this.state.modal
-    });
-  };
-
-  firstNameChange = event => {
-    this.setState({
-      firstName: event.target.value
-    });
-  };
-
-  lastNameChange = event => {
-    this.setState({
-      lastName: event.target.value
     });
   };
 
@@ -61,9 +53,8 @@ class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
     this.firebase.push({
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
       email: this.state.email
     });
   };
@@ -84,7 +75,7 @@ class App extends Component {
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
             Our website is under construciton. We are working very hard to give you the best experience.
           </p>
-          {/* <Button outline color="info" onClick={this.toggle}>
+          <Button outline color="info" onClick={this.toggle}>
             Subscribe
           </Button>
           <Modal isOpen={this.state.modal}>
@@ -92,18 +83,6 @@ class App extends Component {
               Subscribe via email
             </ModalHeader>
             <ModalBody>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <input
-                  onChange={this.firstNameChange}
-                  style={{ width: '48%', height: '36px', paddingLeft: '5px' }}
-                  placeholder="First Name"
-                />
-                <input
-                  onChange={this.lastNameChange}
-                  style={{ width: '48%', height: '36px', paddingLeft: '5px' }}
-                  placeholder="Last Name"
-                />
-              </div>
               <input
                 onChange={this.emailChange}
                 type="email"
@@ -112,11 +91,11 @@ class App extends Component {
               />
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onClick={this.toggle}>
+              <Button type="submit" onSubmit={this.handleSubmit} color="primary" onClick={this.toggle}>
                 Subscribe
               </Button>{' '}
             </ModalFooter>
-          </Modal> */}
+          </Modal>
         </div>
         <SocialLinks />
         {/* <LoginForm /> */}
