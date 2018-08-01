@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Spinner from 'react-spinkit';
+
 import './App.css';
 import SocialLinks from './components/SocialLinks';
 // import LoginForm from './components/LoginForm';
@@ -19,6 +21,10 @@ class App extends Component {
     };
   }
 
+  componentWillMount() {
+    return <Spinner name="double-bounce" />;
+  }
+
   componentDidMount() {
     const config = {
       apiKey: 'AIzaSyC8SqgnNwzMufdXxzq5gfMrDHpbXp56X5E',
@@ -34,9 +40,16 @@ class App extends Component {
     firebase.auth().signInAnonymously();
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
-      console.log('here', firebaseUser);
+      const { uid } = firebaseUser;
+      console.log('didMount', uid);
     });
   }
+
+  handleSubmit = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  };
 
   toggle = () => {
     this.setState({
@@ -48,15 +61,7 @@ class App extends Component {
     this.setState({
       email: event.target.value
     });
-    console.log(this.state.email);
-  };
-
-  handleSubmit = event => {
-    event.preventDefault();
-
-    this.firebase.push({
-      email: this.state.email
-    });
+    // console.log(this.state.email);
   };
 
   render() {
@@ -75,9 +80,10 @@ class App extends Component {
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
             Our website is under construciton. We are working very hard to give you the best experience.
           </p>
-          <Button outline color="info" onClick={this.toggle}>
+          {/* <Spinner name="double-bounce" /> */}
+          {/* <Button outline color="info" onClick={this.toggle}>
             Subscribe
-          </Button>
+          </Button> */}
           <Modal isOpen={this.state.modal}>
             <ModalHeader style={{ textTransform: 'uppercase' }} toggle={this.toggle}>
               Subscribe via email
@@ -91,7 +97,7 @@ class App extends Component {
               />
             </ModalBody>
             <ModalFooter>
-              <Button type="submit" onSubmit={this.handleSubmit} color="primary" onClick={this.toggle}>
+              <Button type="submit" onSubmit={this.handleSubmit} color="primary">
                 Subscribe
               </Button>{' '}
             </ModalFooter>
