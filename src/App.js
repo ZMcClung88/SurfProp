@@ -5,6 +5,7 @@ import Spinner from 'react-spinkit';
 
 import './App.css';
 import SocialLinks from './components/SocialLinks';
+import SubscribeButton from './components/SubscribeButton';
 // import LoginForm from './components/LoginForm';
 // import Navbar from './components/Navbar';
 import Background from './media/bg.jpg';
@@ -12,56 +13,61 @@ import Logo from './media/4a8dfe302137ea75d20d9e9e23a46c47_taal-volcano-tagaytay
 // import config from './config';
 import MediaQuery from 'react-responsive';
 
+const config = {
+  apiKey: 'AIzaSyC8SqgnNwzMufdXxzq5gfMrDHpbXp56X5E',
+  authDomain: 'surfprop-42da7.firebaseapp.com',
+  databaseURL: 'https://surfprop-42da7.firebaseio.com',
+  projectId: 'surfprop-42da7',
+  storageBucket: 'surfprop-42da7.appspot.com',
+  messagingSenderId: '975203789447'
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
+      uid: '',
       email: ''
     };
   }
 
   componentWillMount() {
-    return <Spinner name="double-bounce" />;
+    // return <Spinner name="double-bounce" />;
   }
 
   componentDidMount() {
-    const config = {
-      apiKey: 'AIzaSyC8SqgnNwzMufdXxzq5gfMrDHpbXp56X5E',
-      authDomain: 'surfprop-42da7.firebaseapp.com',
-      databaseURL: 'https://surfprop-42da7.firebaseio.com',
-      projectId: 'surfprop-42da7',
-      storageBucket: 'surfprop-42da7.appspot.com',
-      messagingSenderId: '975203789447'
-    };
-
     firebase.initializeApp(config);
-
-    firebase.auth().signInAnonymously();
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
       const { uid } = firebaseUser;
-      console.log('didMount', uid);
+
+      this.setState({
+        uid: uid
+      });
+      console.log('cheerzz', this.state.uid);
     });
   }
-
-  handleSubmit = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
-  };
-
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
-  };
-
   emailChange = event => {
+    let email = this.state.email;
+
     this.setState({
       email: event.target.value
     });
     // console.log(this.state.email);
+  };
+
+  handleClick = () => {
+    const currentUser = firebase.auth().signInAnonymously();
+    console.log('uzer', currentUser);
+    firebase
+      .database()
+      .ref(`/${currentUser.uid}/email`)
+      .push(this.state.email);
+
+    this.setState({
+      modal: !this.state.modal
+    });
   };
 
   render() {
@@ -80,28 +86,7 @@ class App extends Component {
           <p style={{ width: '80%', fontSize: '12', letterSpacing: '1px', textAlign: 'center', lineHeight: '30px' }}>
             Our website is under construciton. We are working very hard to give you the best experience.
           </p>
-          {/* <Spinner name="double-bounce" /> */}
-          {/* <Button outline color="info" onClick={this.toggle}>
-            Subscribe
-          </Button> */}
-          <Modal isOpen={this.state.modal}>
-            <ModalHeader style={{ textTransform: 'uppercase' }} toggle={this.toggle}>
-              Subscribe via email
-            </ModalHeader>
-            <ModalBody>
-              <input
-                onChange={this.emailChange}
-                type="email"
-                placeholder="Email"
-                style={{ width: '100%', height: '36px', paddingLeft: '5px', marginTop: '5px' }}
-              />
-            </ModalBody>
-            <ModalFooter>
-              <Button type="submit" onSubmit={this.handleSubmit} color="primary">
-                Subscribe
-              </Button>{' '}
-            </ModalFooter>
-          </Modal>
+          <SubscribeButton uid={this.state.uid} emailChange={this.emailChange} handleClick={this.handleClick} />
         </div>
         <SocialLinks />
         {/* <LoginForm /> */}
