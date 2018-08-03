@@ -58,12 +58,35 @@ class App extends Component {
   };
 
   handleClick = () => {
-    const currentUser = firebase.auth().signInAnonymously();
-    console.log('uzer', currentUser);
-    firebase
-      .database()
-      .ref(`/${currentUser.uid}/email`)
-      .push(this.state.email);
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        // User is signed in.
+        // const isAnonymous = user.isAnonymous;
+
+        const uid = user.uid;
+        console.log(uid);
+        const ref = firebase.database().ref(`users/${uid}`);
+        ref.set({ email: this.state.email });
+        //   .push(this.state.email);
+        // var userRef = firebase.database();
+        // var useridRef = userRef.child(app.userid);
+        // useridRef.set({
+        //   locations: '',
+        //   theme: '',
+        //   colorScheme: '',
+        //   food: ''
+        // });
+
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+        console.log('else');
+      }
+      // ...
+    });
+
+    firebase.auth().signInAnonymously();
 
     this.setState({
       modal: !this.state.modal
