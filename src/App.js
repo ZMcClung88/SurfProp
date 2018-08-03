@@ -13,15 +13,6 @@ import Logo from './media/4a8dfe302137ea75d20d9e9e23a46c47_taal-volcano-tagaytay
 // import config from './config';
 import MediaQuery from 'react-responsive';
 
-const config = {
-  apiKey: 'AIzaSyC8SqgnNwzMufdXxzq5gfMrDHpbXp56X5E',
-  authDomain: 'surfprop-42da7.firebaseapp.com',
-  databaseURL: 'https://surfprop-42da7.firebaseio.com',
-  projectId: 'surfprop-42da7',
-  storageBucket: 'surfprop-42da7.appspot.com',
-  messagingSenderId: '975203789447'
-};
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,63 +26,6 @@ class App extends Component {
   componentWillMount() {
     // return <Spinner name="double-bounce" />;
   }
-
-  componentDidMount() {
-    firebase.initializeApp(config);
-
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-      const { uid } = firebaseUser;
-
-      this.setState({
-        uid: uid
-      });
-      console.log('cheerzz', this.state.uid);
-    });
-  }
-  emailChange = event => {
-    let email = this.state.email;
-
-    this.setState({
-      email: event.target.value
-    });
-    // console.log(this.state.email);
-  };
-
-  handleClick = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        // User is signed in.
-        // const isAnonymous = user.isAnonymous;
-
-        const uid = user.uid;
-        console.log(uid);
-        const ref = firebase.database().ref(`users/${uid}`);
-        ref.set({ email: this.state.email });
-        //   .push(this.state.email);
-        // var userRef = firebase.database();
-        // var useridRef = userRef.child(app.userid);
-        // useridRef.set({
-        //   locations: '',
-        //   theme: '',
-        //   colorScheme: '',
-        //   food: ''
-        // });
-
-        // ...
-      } else {
-        // User is signed out.
-        // ...
-        console.log('else');
-      }
-      // ...
-    });
-
-    firebase.auth().signInAnonymously();
-
-    this.setState({
-      modal: !this.state.modal
-    });
-  };
 
   render() {
     return (
