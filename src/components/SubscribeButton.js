@@ -1,6 +1,7 @@
 import firebase from 'firebase';
+import * as EmailValidator from 'email-validator';
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import config from '../config';
 
 class SubscribeButton extends Component {
@@ -8,7 +9,8 @@ class SubscribeButton extends Component {
     super(props);
     this.state = {
       modal: false,
-      email: ''
+      email: '',
+      showAlert: false
     };
   }
 
@@ -19,19 +21,24 @@ class SubscribeButton extends Component {
   }
 
   handleClick = () => {
+    this.setState({ showAlert: false });
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.setState({
-          modal: false
-        });
-        console.log(this.state.email);
         // User is signed in.
         // const isAnonymous = user.isAnonymous;
+        if (EmailValidator.validate(this.state.email)) {
+          this.setState({
+            modal: false
+          });
 
-        const uid = user.uid;
-        console.log(uid);
-        const ref = firebase.database().ref(`users/${uid}`);
-        ref.push({ email: this.state.email });
+          const uid = user.uid;
+          console.log(uid);
+          const ref = firebase.database().ref(`users/${uid}`);
+          ref.push({ email: this.state.email });
+        } else {
+          console.log(EmailValidator.validate(this.state.email));
+          this.setState({ showAlert: true });
+        }
 
         //   .push(this.state.email);
         // var userRef = firebase.database();
@@ -70,6 +77,18 @@ class SubscribeButton extends Component {
     // console.log(this.state.email);
   };
 
+  showAlert = () => {
+    if (this.state.showAlert === true) {
+      return (
+        <div container="fluid">
+          <Alert text-center style={{ marginTop: 5, height: 50 }} color="danger">
+            <p>Please enter a valid email</p>
+          </Alert>
+        </div>
+      );
+    }
+  };
+
   // handleClick = () => {
   //   console.log('state', this.state.modal);
   //   this.setState({
@@ -92,6 +111,7 @@ class SubscribeButton extends Component {
               placeholder="Email"
               style={{ width: '100%', height: '36px', paddingLeft: '5px', marginTop: '5px' }}
             />
+            {this.showAlert()}
           </ModalBody>
           <ModalFooter>
             <Button type="submit" onClick={this.handleClick} color="primary">
