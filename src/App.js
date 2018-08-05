@@ -23,10 +23,6 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
-    // return <Spinner name="double-bounce" />;
-  }
-
   render() {
     return (
       <div>

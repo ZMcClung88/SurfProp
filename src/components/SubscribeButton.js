@@ -20,6 +20,20 @@ class SubscribeButton extends Component {
     firebase.auth().signInAnonymously();
   }
 
+  componentWillMount() {
+    document.addEventListener('mousedown', this.watchClick, false);
+  }
+
+  watchClick = e => {
+    if (this.node.contains(e.target)) {
+      return;
+    } else {
+      this.setState({
+        modal: false
+      });
+    }
+  };
+
   handleClick = () => {
     this.setState({ showAlert: false });
     firebase.auth().onAuthStateChanged(user => {
@@ -97,8 +111,13 @@ class SubscribeButton extends Component {
   // };
 
   render() {
+    const externalCloseBtn = (
+      <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>
+        &times;
+      </button>
+    );
     return (
-      <div>
+      <div ref={node => (this.node = node)}>
         <Button outline color="info" onClick={this.toggle}>
           Subscribe
         </Button>
