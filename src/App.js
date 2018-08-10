@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import firebase from 'firebase';
 // import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import Spinner from 'react-spinkit';
+import HomeView from './views/HomeView';
 
 import './App.css';
 import SocialLinks from './components/SocialLinks';
@@ -26,13 +27,14 @@ class App extends Component {
   render() {
     return (
       <div>
+        <HomeView />
         {/* <Navbar /> */}
-        <div style={styles.backgroundStyle}>
-          {/* <div style={styles.logoStyle} /> */}
-          <MediaQuery query="(min-device-width: 462px)">
-            <h1 style={{ fontSize: '66px', letterSpacing: '6px' }}>Coming Soon!</h1>
-          </MediaQuery>
-          <MediaQuery query="(max-device-width: 461px)">
+        {/* <div style={styles.backgroundStyle}> */}
+        {/* <div style={styles.logoStyle} /> */}
+        {/* <MediaQuery query="(min-device-width: 462px)"> */}
+        {/* <h1 style={{ fontSize: '66px', letterSpacing: '6px' }}>Coming Soon!</h1> */}
+        {/* </MediaQuery> */}
+        {/* <MediaQuery query="(max-device-width: 461px)">
             <h1 style={{ fontSize: '33px', letterSpacing: '6px' }}>Coming Soon!</h1>
           </MediaQuery>
 
@@ -41,7 +43,7 @@ class App extends Component {
           </p>
           <SubscribeButton uid={this.state.uid} emailChange={this.emailChange} handleClick={this.handleClick} />
         </div>
-        <SocialLinks />
+        <SocialLinks /> */}
         {/* <LoginForm /> */}
       </div>
     );
