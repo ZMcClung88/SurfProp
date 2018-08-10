@@ -83,7 +83,7 @@ class SubscribeButton extends Component {
   };
 
   emailChange = event => {
-    let email = this.state.email;
+    // let email = this.state.email;
 
     this.setState({
       email: event.target.value
@@ -111,11 +111,11 @@ class SubscribeButton extends Component {
   // };
 
   render() {
-    const externalCloseBtn = (
-      <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>
-        &times;
-      </button>
-    );
+    // const externalCloseBtn = (
+    //   <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>
+    //     &times;
+    //   </button>
+    // );
     return (
       <div ref={node => (this.node = node)}>
         <Button outline color="info" onClick={this.toggle}>

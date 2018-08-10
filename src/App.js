@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import firebase from 'firebase';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Spinner from 'react-spinkit';
+// import firebase from 'firebase';
+// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+// import Spinner from 'react-spinkit';
 
 import './App.css';
 import SocialLinks from './components/SocialLinks';
@@ -73,7 +73,7 @@ const styles = {
     // justifyContent: 'center',
     alignItems: 'center',
     color: 'grey',
-    mixBlendMode: 'difference',
+    // mixBlendMode: 'difference',
     letterSpacing: '4px',
     paddingTop: '25px'
 

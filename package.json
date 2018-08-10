@@ -15,6 +15,7 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-fontawesome": "^1.6.1",
+    "react-preload-image": "^1.0.4",
     "react-redux": "^5.0.7",
     "react-responsive": "^5.0.0",
     "react-scripts": "1.1.4",
@@ -31,6 +32,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "react-social-icons": "^3.0.0"
   }
 }
