@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {
+  Card,
+  CardBody,
+  CardText,
   Col,
   Collapse,
   Container,
@@ -77,6 +80,19 @@ class HomeView extends Component {
             </Col>
             <Col>
               <MenuCards title="Rent" />
+            </Col>
+          </Row>
+        </Container>
+
+        <Container style={{ marginTop: '15%' }}>
+          <h6>Introducing Surf Properties</h6>
+          <Row>
+            <Col>
+              <Card>
+                <CardBody>
+                  <CardText>test test test</CardText>
+                </CardBody>
+              </Card>
             </Col>
           </Row>
         </Container>
