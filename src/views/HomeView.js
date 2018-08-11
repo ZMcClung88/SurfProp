@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -46,7 +47,9 @@ class HomeView extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="ml-auto">
-                <NavLink href="#">BUY</NavLink>
+                <NavLink tag={Link} to="/properties">
+                  BUY
+                </NavLink>
               </NavItem>
               <NavItem className="ml-auto">
                 <NavLink href="#">SELL</NavLink>
@@ -72,14 +75,14 @@ class HomeView extends Component {
           </Collapse>
         </Navbar>
 
-        <Container style={{ marginTop: '5%' }}>
+        <Container style={{ marginTop: '15%' }}>
           <h6>Find the best surf spots!</h6>
           <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
             <Col>
               <MenuCards title="Buy" />
             </Col>
             <Col>
-              <MenuCards title="Sell" />
+              <MenuCards isSelected title="Sell" />
             </Col>
             <Col>
               <MenuCards title="Rent" />
@@ -109,7 +112,7 @@ class HomeView extends Component {
           <Container>
             <Row>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
                   <CardImg
                     top
                     width="auto"
@@ -127,7 +130,7 @@ class HomeView extends Component {
                 </Card>
               </Col>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
                   <CardImg
                     top
                     width="auto"
@@ -147,7 +150,7 @@ class HomeView extends Component {
             </Row>
             <Row>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
                   <CardImg
                     top
                     width="auto"
@@ -165,7 +168,7 @@ class HomeView extends Component {
                 </Card>
               </Col>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
                   <CardImg
                     top
                     width="auto"
@@ -184,7 +187,26 @@ class HomeView extends Component {
               </Col>
             </Row>
           </Container>
-          <Button>Show All</Button>
+          <div style={{ width: '100%', textAlign: 'center', marginBottom: '5%' }}>
+            <Button style={{ width: '50%' }}>Show All</Button>
+          </div>
+        </Container>
+
+        <Container style={{ marginTop: '15%', marginBottom: '15%' }}>
+          <Row>
+            <Col>
+              <Card>
+                <CardBody className="d-flex flex-column" style={{ height: '350px' }}>
+                  <CardText style={{ fontSize: '22px', fontWeight: 'bold' }}>
+                    Learn to make money off of your properties
+                  </CardText>
+                  <Button className="d-flex pl-3 mt-auto align-self-end" style={{ width: '45%' }} color="info">
+                    Find Out More
+                  </Button>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
         </Container>
       </div>
     );
