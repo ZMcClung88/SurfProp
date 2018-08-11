@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {
+  Button,
   Card,
   CardBody,
+  CardGroup,
+  CardImg,
   CardText,
   Col,
   Collapse,
@@ -89,12 +92,99 @@ class HomeView extends Component {
           <Row>
             <Col>
               <Card>
-                <CardBody>
-                  <CardText>test test test</CardText>
+                <CardBody style={{ height: '350px' }}>
+                  <CardText style={{ fontSize: '12px', width: '50%' }}>
+                    Bacon ipsum dolor amet pig chuck buffalo pork filet mignon meatball fatback kielbasa ball tip jowl
+                    shoulder hamburger boudin.
+                  </CardText>
+                  <Button color="info">Explore Spots</Button>
                 </CardBody>
               </Card>
             </Col>
           </Row>
+        </Container>
+
+        <Container style={{ marginTop: '15%' }}>
+          <h6 style={{ marginBottom: '5%' }}>Spots around the world</h6>
+          <Container>
+            <Row>
+              <Col style={{ justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                  <CardImg
+                    top
+                    width="auto"
+                    height="70%"
+                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                    alt="Card image cap"
+                  />
+                  <CardBody style={{ marginTop: '-12%' }}>
+                    <CardText>
+                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
+                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px' }}>price</p>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col style={{ justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                  <CardImg
+                    top
+                    width="auto"
+                    height="70%"
+                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                    alt="Card image cap"
+                  />
+                  <CardBody style={{ marginTop: '-12%' }}>
+                    <CardText>
+                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
+                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px' }}>price</p>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+            <Row>
+              <Col style={{ justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                  <CardImg
+                    top
+                    width="auto"
+                    height="70%"
+                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                    alt="Card image cap"
+                  />
+                  <CardBody style={{ marginTop: '-12%' }}>
+                    <CardText>
+                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
+                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px' }}>price</p>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+              <Col style={{ justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '150px', height: '150px' }}>
+                  <CardImg
+                    top
+                    width="auto"
+                    height="70%"
+                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                    alt="Card image cap"
+                  />
+                  <CardBody style={{ marginTop: '-12%' }}>
+                    <CardText>
+                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
+                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px' }}>price</p>
+                    </CardText>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
+          <Button>Show All</Button>
         </Container>
       </div>
     );
