@@ -10,3 +10,7 @@ body {
     font-size: 10px;
   }
 }
+
+#mapid {
+  height: 180px;
+}
