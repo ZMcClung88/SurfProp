@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import Spinner from 'react-spinkit';
 import HomeView from './views/HomeView';
 import PropertyList from './views/PropertyList';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import './App.css';
 import SocialLinks from './components/SocialLinks';

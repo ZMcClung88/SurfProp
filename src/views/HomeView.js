@@ -112,7 +112,7 @@ class HomeView extends Component {
           <Container>
             <Row>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
                   <CardImg
                     top
                     width="auto"
@@ -120,17 +120,15 @@ class HomeView extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-12%' }}>
+                  <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
                       <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
-                      <p style={{ fontSize: '10px' }}>price</p>
                     </CardText>
                   </CardBody>
                 </Card>
               </Col>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
                   <CardImg
                     top
                     width="auto"
@@ -138,11 +136,9 @@ class HomeView extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-12%' }}>
+                  <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
                       <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
-                      <p style={{ fontSize: '10px' }}>price</p>
                     </CardText>
                   </CardBody>
                 </Card>
@@ -150,7 +146,7 @@ class HomeView extends Component {
             </Row>
             <Row>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
                   <CardImg
                     top
                     width="auto"
@@ -158,17 +154,15 @@ class HomeView extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-12%' }}>
+                  <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
                       <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
-                      <p style={{ fontSize: '10px' }}>price</p>
                     </CardText>
                   </CardBody>
                 </Card>
               </Col>
               <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '140px', height: '150px' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
                   <CardImg
                     top
                     width="auto"
@@ -176,11 +170,9 @@ class HomeView extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-12%' }}>
+                  <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <h6 style={{ marginBottom: '-3%' }}>test test</h6>
                       <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
-                      <p style={{ fontSize: '10px' }}>price</p>
                     </CardText>
                   </CardBody>
                 </Card>

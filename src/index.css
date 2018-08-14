@@ -14,3 +14,11 @@ body {
 #mapid {
   height: 180px;
 }
+
+#root {
+  width: 100%;
+}
+
+.nav {
+  margin-left: -100px;
+}
