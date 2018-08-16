@@ -40,20 +40,19 @@ class SubscribeButton extends Component {
       if (user) {
         // User is signed in.
         // const isAnonymous = user.isAnonymous;
-        if (EmailValidator.validate(this.state.email)) {
-          this.setState({
-            modal: false
-          });
-
-          const uid = user.uid;
-          console.log(uid);
-          const ref = firebase.database().ref(`users/${uid}`);
-          ref.push({ email: this.state.email });
-        } else {
-          console.log(EmailValidator.validate(this.state.email));
-          this.setState({ showAlert: true });
-        }
-
+        // if (EmailValidator.validate(this.state.email)) {
+        //   this.setState({
+        //     modal: false
+        //   });
+        //
+        //   const uid = user.uid;
+        //   console.log(uid);
+        //   const ref = firebase.database().ref(`users/${uid}`);
+        //   ref.push({ email: this.state.email });
+        // } else {
+        //   console.log(EmailValidator.validate(this.state.email));
+        //   this.setState({ showAlert: true });
+        // }
         //   .push(this.state.email);
         // var userRef = firebase.database();
         // var useridRef = userRef.child(app.userid);
@@ -63,7 +62,6 @@ class SubscribeButton extends Component {
         //   colorScheme: '',
         //   food: ''
         // });
-
         // ...
       } else {
         // User is signed out.
@@ -122,7 +120,7 @@ class SubscribeButton extends Component {
           Subscribe
         </Button>
         <Modal isOpen={this.state.modal}>
-          <ModalHeader style={{ textTransform: 'uppercase' }}>Subscribe via email</ModalHeader>
+          <ModalHeader>Exclusive Access</ModalHeader>
           <ModalBody>
             <input
               onChange={this.emailChange}
