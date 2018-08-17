@@ -16,13 +16,17 @@ class SocialLinks extends Component {
         >
           {/* <h1>Hello</h1> */}
           <div>
-            <SocialIcon style={{ height: 25, width: 25 }} color="#fff" url="http://instagram.com/surfprop" />
+            <SocialIcon
+              style={{ height: 25, width: 25 }}
+              color={this.props.color}
+              url="http://instagram.com/surfprop"
+            />
           </div>
 
           <div>
             <SocialIcon
               style={{ height: 25, width: 25 }}
-              color="#fff"
+              color={this.props.color}
               network="facebook"
               url="https://www.facebook.com/surfproperty/?fref=mentions"
             />
