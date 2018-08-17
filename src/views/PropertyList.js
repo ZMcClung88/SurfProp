@@ -105,7 +105,11 @@ class PropertyList extends Component {
           }}
         >
           <Row>
-            <Dropdown title="BUY" options={(1, 2, 3, 4)} />
+            <Dropdown title="BUY" />
+            <Dropdown title="TYPE" />
+            <Dropdown title="MIN PRICE" />
+            <Dropdown title="MAX PRICE" />
+
             {/* <Dropdown placeholder="Select Friend" fluid selection options={categoryOptions} /> */}
             {/* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle2}>
               <DropdownToggle color="info" caret>
@@ -128,15 +132,16 @@ class PropertyList extends Component {
             </DropdownButton> */}
           </Row>
         </Container>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
-        <p>test test</p>
+
+        <Container>
+          <Row style={{ marginTop: '15%' }}>
+            <h1 style={{ fontSize: '16px' }}>Intoducing Surf Propertiess</h1>
+            <p style={{ fontSize: '11px' }}>
+              Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
+              venenatis sit amet finibus quis, tempus in lectus.
+            </p>
+          </Row>
+        </Container>
       </div>
     );
   }
