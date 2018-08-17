@@ -26,7 +26,16 @@ class Dropdown extends Component {
   render() {
     return (
       <div>
-        <button style={{ border: '1px solid grey', height: '25px', width: '150px' }} onClick={this.showMenu}>
+        <button
+          style={{
+            border: '1px solid grey',
+            height: '25px',
+            width: '150px',
+            backgroundColor: '#fff',
+            color: 'grey'
+          }}
+          onClick={this.showMenu}
+        >
           {this.props.title}
         </button>
 

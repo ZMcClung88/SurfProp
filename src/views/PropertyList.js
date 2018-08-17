@@ -8,9 +8,11 @@ import {
   CardGroup,
   CardImg,
   CardText,
+  CardTitle,
   Col,
   Collapse,
   Container,
+  Input,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -99,12 +101,15 @@ class PropertyList extends Component {
           style={{
             height: '100px',
             width: '112%',
-            paddingTop: '25px',
             backgroundColor: 'lightgrey',
             marginLeft: '-5.1%'
           }}
         >
-          <Row>
+          <Row style={{ justifyContent: 'center' }}>
+            <Input
+              placeholder="Address, City, State, Zip"
+              style={{ width: '80vw', height: '25px', marginTop: '3%', marginBottom: '3%' }}
+            />
             <Dropdown title="BUY" />
             <Dropdown title="TYPE" />
             <Dropdown title="MIN PRICE" />
@@ -140,6 +145,83 @@ class PropertyList extends Component {
               Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
               venenatis sit amet finibus quis, tempus in lectus.
             </p>
+          </Row>
+
+          <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
+            <Card style={{ width: '90vw', height: '25vh' }}>
+              <CardImg
+                top
+                width="auto"
+                height="70%"
+                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                alt="Card image cap"
+              />
+              <CardBody style={{ height: '30px', border: 'none' }}>
+                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+                {/* <CardText>
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </CardText> */}
+                {/* <Button>Button</Button> */}
+              </CardBody>
+            </Card>
+          </Row>
+          <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+            <Card style={{ width: '90vw', height: '25vh' }}>
+              <CardImg
+                top
+                width="auto"
+                height="70%"
+                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                alt="Card image cap"
+              />
+              <CardBody style={{ height: '30px', border: 'none' }}>
+                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+                {/* <CardText>
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </CardText> */}
+                {/* <Button>Button</Button> */}
+              </CardBody>
+            </Card>
+          </Row>
+          <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+            <Card style={{ width: '90vw', height: '25vh' }}>
+              <CardImg
+                top
+                width="auto"
+                height="70%"
+                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                alt="Card image cap"
+              />
+              <CardBody style={{ height: '30px', border: 'none' }}>
+                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+                {/* <CardText>
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </CardText> */}
+                {/* <Button>Button</Button> */}
+              </CardBody>
+            </Card>
+          </Row>
+          <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+            <Card style={{ width: '90vw', height: '25vh' }}>
+              <CardImg
+                top
+                width="auto"
+                height="70%"
+                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                alt="Card image cap"
+              />
+              <CardBody style={{ height: '30px', border: 'none' }}>
+                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+                {/* <CardText>
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </CardText> */}
+                {/* <Button>Button</Button> */}
+              </CardBody>
+            </Card>
           </Row>
         </Container>
       </div>
