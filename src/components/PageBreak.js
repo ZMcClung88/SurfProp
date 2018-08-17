@@ -13,7 +13,8 @@ const styles = {
     height: '1px',
     width: '90%',
     borderBottom: '1px solid black',
-    marginTop: '15%'
+    marginTop: '15%',
+    marginBottom: '15%'
   }
 };
 

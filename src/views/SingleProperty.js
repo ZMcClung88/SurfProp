@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'reactstrap';
+import { Card, Container, Row } from 'reactstrap';
 import SocialLinks from '../components/SocialLinks';
 import PageBreak from '../components/PageBreak';
+import Map from '../components/Map';
 import Carousel from '../components/Carousel';
 import { FaBed, FaBath } from 'react-icons/fa';
 
@@ -45,16 +46,103 @@ class SingleProperty extends Component {
               }}
             >
               <h6>
-                3<FaBed size="2em" />
+                3 <FaBed size="2em" />
               </h6>
               <h6>
-                2<FaBath size="2em" />
+                2 <FaBath size="2em" />
               </h6>
             </div>
           </Row>
         </Container>
 
         <PageBreak />
+
+        <Container style={{ marginBottom: '15%' }}>
+          <Row style={{ fontSize: '28px', paddingLeft: '10%' }}>Photos</Row>
+
+          <Row style={{ display: 'flex', justifyContent: 'space-around', marginTop: '10%', marginBottom: '10%' }}>
+            <Card
+              style={{
+                height: '100px',
+                width: '150px',
+                backgroundColor: 'grey',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <h5>House</h5>
+            </Card>
+            <Card
+              style={{
+                height: '100px',
+                width: '150px',
+                backgroundColor: 'grey',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <h5>House</h5>
+            </Card>
+          </Row>
+
+          <Row style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <Card
+              style={{
+                height: '100px',
+                width: '150px',
+                backgroundColor: 'grey',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <h5>House</h5>
+            </Card>
+            <Card
+              style={{
+                height: '100px',
+                width: '150px',
+                backgroundColor: 'grey',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <h5>House</h5>
+            </Card>
+          </Row>
+        </Container>
+
+        <PageBreak />
+
+        <Container style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+          <Row style={{ width: '90%', flexDirection: 'column', marginLeft: '5%' }}>
+            <h1>Features</h1>
+            <ul>
+              <li>WiFi</li>
+              <li>Hotub</li>
+              <li>Kitchen</li>
+              <li>Beach Access</li>
+              <li>Pet Friendly</li>
+            </ul>
+          </Row>
+          <Row style={{ width: '90%', flexDirection: 'column', marginLeft: '5%' }}>
+            <h1>Ammenities</h1>
+            <ul>
+              <li>Bar</li>
+              <li>Pool Table</li>
+              <li>Ping Pong Table</li>
+              <li>Beach Access</li>
+              <li>Pet Friendly</li>
+            </ul>
+          </Row>
+        </Container>
+
+        <PageBreak />
+
+        <Container style={{ display: 'flex', justifyContent: 'center', marginBottom: '15%' }}>
+          <Row style={{ width: '90%' }}>
+            <Map />
+          </Row>
+        </Container>
       </div>
     );
   }
