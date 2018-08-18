@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import HomeView from './views/HomeView';
 import PropertyList from './views/PropertyList';
 import SingleProperty from './views/SingleProperty';
+import Blog from './views/BlogView';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import './App.css';
@@ -95,6 +96,7 @@ class App extends Component {
           <Route exact path="/" component={HomeView} />
           <Route path="/properties" component={PropertyList} />
           <Route path="/singleProperty" component={SingleProperty} />
+          <Route path="/Blog" component={Blog} />
         </div>
       </Router>
     );
