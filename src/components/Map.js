@@ -30,8 +30,14 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           options={this.props.options}
+          disableDefaultUI={this.props.disableDefaultUI}
         >
-          <AnyReactComponent lat={59.955413} lng={30.337844} text={'Kreyser Avrora'} />
+          <AnyReactComponent
+            disableDefaultUI={this.props.disableDefaultUI}
+            lat={59.955413}
+            lng={30.337844}
+            text={'Kreyser Avrora'}
+          />
         </GoogleMapReact>
       </div>
     );

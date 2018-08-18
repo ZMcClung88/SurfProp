@@ -39,6 +39,7 @@ class Blog extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
     return (
       <div>
@@ -84,7 +85,7 @@ class Blog extends Component {
         </Container>
 
         <Container>
-          <Row>
+          <Row style={{ marginBottom: '5%' }}>
             <Col>
               <Card>
                 <CardImg
