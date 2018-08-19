@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Video from '../media/Gopro_ First Person Surfing.mp4';
+import Map from '../components/Map';
+import { FaChevronDown } from 'react-icons/fa';
+// import { Player, ControlBar } from 'video-react';
+// import Col from 'react-bootstrap/lib/Col';
 import {
   Button,
   Card,
@@ -7,8 +12,8 @@ import {
   CardGroup,
   CardImg,
   CardText,
-  Col,
   Collapse,
+  Col,
   Container,
   Navbar,
   NavbarToggler,
@@ -28,20 +33,22 @@ class HomeView extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      videoURL: '../media/Gopro_ First Person Surfing.mp4'
     };
   }
-  toggle() {
+
+  toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
+  };
+
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="lg">
           <NavbarBrand href="/">surfProp</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -75,7 +82,32 @@ class HomeView extends Component {
           </Collapse>
         </Navbar>
 
-        <Container style={{ marginTop: '15%' }}>
+        <Container className="d-none d-sm-block" style={{ width: '90vw', marginLeft: '-2%' }}>
+          <video style={{ width: '100vw' }} id="background-video" muted="true" loop autoPlay>
+            <source src={Video} type="video/mp4" />
+            <source src={Video} type="video/ogg" />
+            Your browser does not support the video tag.
+          </video>
+          <Row
+            style={{
+              marginLeft: '0%',
+              marginTop: '-10vh',
+              width: '100vw',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <Col style={{ display: 'flex', justifyContent: 'center' }}>
+              <FaChevronDown style={{ color: '#fff' }} size="3em" />
+            </Col>
+          </Row>
+        </Container>
+
+        <Container className="d-none d-sm-block" style={{ marginLeft: '-2%' }}>
+          <Map />
+        </Container>
+
+        <Container className="d-md-none" style={{ marginTop: '15%' }}>
           <h6>Find the best surf spots!</h6>
           <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
             <Col>
@@ -90,7 +122,7 @@ class HomeView extends Component {
           </Row>
         </Container>
 
-        <Container style={{ marginTop: '15%' }}>
+        <Container className="d-md-none" style={{ marginTop: '15%' }}>
           <h6>Introducing Surf Properties</h6>
           <Row>
             <Col>
@@ -111,70 +143,70 @@ class HomeView extends Component {
           <h6 style={{ marginBottom: '5%' }}>Spots around the world</h6>
           <Container>
             <Row>
-              <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
+              <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                   <CardImg
                     top
                     width="auto"
-                    height="70%"
+                    height="100%"
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-15%' }}>
+                  {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
                     </CardText>
-                  </CardBody>
+                  </CardBody> */}
                 </Card>
               </Col>
-              <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
+              <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                   <CardImg
                     top
                     width="auto"
-                    height="70%"
+                    height="100%"
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-15%' }}>
+                  {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
                     </CardText>
-                  </CardBody>
+                  </CardBody> */}
                 </Card>
               </Col>
             </Row>
-            <Row>
-              <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
+            <Row style={{ display: 'flex', justifyContent: 'center' }}>
+              <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                   <CardImg
                     top
                     width="auto"
-                    height="70%"
+                    height="100%"
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-15%' }}>
+                  {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
                     </CardText>
-                  </CardBody>
+                  </CardBody> */}
                 </Card>
               </Col>
-              <Col style={{ justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '60%' }}>
+              <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                   <CardImg
                     top
                     width="auto"
-                    height="70%"
+                    height="100%"
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  <CardBody style={{ marginTop: '-15%' }}>
+                  {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '-5%' }}>location</p>
+                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
                     </CardText>
-                  </CardBody>
+                  </CardBody> */}
                 </Card>
               </Col>
             </Row>
