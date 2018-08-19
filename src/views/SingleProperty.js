@@ -61,7 +61,7 @@ class SingleProperty extends Component {
       <div style={{ height: '50vh', width: '100vw' }}>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">surfProp</NavbarBrand>
-          <NavbarToggler onClick={this.toggleModal} />
+          <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="ml-auto">
