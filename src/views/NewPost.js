@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FaCamera } from 'react-icons/fa';
 import {
   Button,
   Card,
@@ -80,7 +81,60 @@ class NewPost extends Component {
             </Nav>
           </Collapse>
         </Navbar>
-        <h1>NEW POST BIATCH</h1>
+
+        <Container style={{ display: 'flex', justifyContent: 'center', marginTop: '10%' }}>
+          <Row>
+            <Col>
+              <h1>New Post</h1>
+            </Col>
+          </Row>
+        </Container>
+
+        <Container style={{ marginTop: '5%' }}>
+          <Row>
+            <Col>
+              <h4>Add Image</h4>
+              <div
+                style={{
+                  height: '75px',
+                  width: '75px',
+                  display: 'flex',
+                  border: '1px solid black',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
+              >
+                <FaCamera size="2em" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
+        <Container style={{ marginTop: '5%' }}>
+          <Row>
+            <Col>
+              <h4>Title</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input style={{ border: '1px solid black', height: '6vh', width: '90vw' }} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <textarea style={{ border: '1px solid black', height: '40vh', width: '90vw', marginTop: '5%' }} />
+            </Col>
+          </Row>
+        </Container>
+
+        <Container style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '5%', marginBottom: '5%' }}>
+          <Row>
+            <Col>
+              <Button>Post</Button>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
