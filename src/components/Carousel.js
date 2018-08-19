@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+// import Carousel from 'react-responsive-carousel';
 
 const items = [
   {

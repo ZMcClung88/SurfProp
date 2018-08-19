@@ -4,6 +4,7 @@ import SocialLinks from '../components/SocialLinks';
 import PageBreak from '../components/PageBreak';
 import Map from '../components/Map';
 import Carousel from '../components/Carousel';
+import Carousel2 from '../components/Carousel2';
 import { FaBed, FaBath } from 'react-icons/fa';
 import {
   Button,
@@ -16,6 +17,10 @@ import {
   Col,
   Collapse,
   Container,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -35,7 +40,8 @@ class SingleProperty extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      modal: false
     };
   }
   toggle() {
@@ -44,12 +50,18 @@ class SingleProperty extends Component {
     });
   }
 
+  toggleModal = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
+  };
+
   render() {
     return (
       <div style={{ height: '50vh', width: '100vw' }}>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">surfProp</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarToggler onClick={this.toggleModal} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="ml-auto">
@@ -133,17 +145,7 @@ class SingleProperty extends Component {
 
           <Row style={{ display: 'flex', justifyContent: 'space-around', marginTop: '10%', marginBottom: '10%' }}>
             <Card
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: 'grey',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
-              <h5>House</h5>
-            </Card>
-            <Card
+              onClick={this.toggleModal}
               style={{
                 height: '100px',
                 width: '150px',
@@ -158,6 +160,7 @@ class SingleProperty extends Component {
 
           <Row style={{ display: 'flex', justifyContent: 'space-around' }}>
             <Card
+              onClick={this.toggleModal}
               style={{
                 height: '100px',
                 width: '150px',
@@ -169,6 +172,7 @@ class SingleProperty extends Component {
               <h5>House</h5>
             </Card>
             <Card
+              onClick={this.toggleModal}
               style={{
                 height: '100px',
                 width: '150px',
@@ -180,6 +184,24 @@ class SingleProperty extends Component {
               <h5>House</h5>
             </Card>
           </Row>
+
+          <Modal style={{ marginTop: '20%' }} isOpen={this.state.modal} toggle={this.toggleModal}>
+            {/* <ModalHeader style={{ justifyContent: 'center' }}>Exclusive Access</ModalHeader> */}
+            {/* <ModalBody>
+                <input
+                  onChange={this.emailChange}
+                  type="email"
+                  placeholder="Email"
+                  style={{ width: '100%', height: '36px', paddingLeft: '5px', marginTop: '5px' }}
+                />
+              </ModalBody>
+              <ModalFooter>
+                <Button type="submit" onClick={this.handleClick} color="primary">
+                  Subscribe
+                </Button>
+              </ModalFooter> */}
+            <Carousel2 />
+          </Modal>
         </Container>
 
         <PageBreak />
