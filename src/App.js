@@ -7,6 +7,7 @@ import HomeView from './views/HomeView';
 import PropertyList from './views/PropertyList';
 import SingleProperty from './views/SingleProperty';
 import NewPost from './views/NewPost';
+import NewListing from './views/NewListing';
 import Blog from './views/BlogView';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -99,6 +100,7 @@ class App extends Component {
           <Route path="/singleProperty" component={SingleProperty} />
           <Route path="/Blog" component={Blog} />
           <Route path="/admin/NewPost" component={NewPost} />
+          <Route path="/admin/NewListing" component={NewListing} />
         </div>
       </Router>
     );
