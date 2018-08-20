@@ -53,7 +53,7 @@ class PropertyList extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="lg">
           <NavbarBrand href="/">surfProp</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -87,7 +87,7 @@ class PropertyList extends Component {
           </Collapse>
         </Navbar>
 
-        <Container style={{ marginLeft: '-30px' }}>
+        <Container style={{ marginLeft: '-15px', width: '100vw' }}>
           <Row>
             <Col>
               <div style={{ width: '50vw' }}>
@@ -100,9 +100,8 @@ class PropertyList extends Component {
         <Container
           style={{
             height: '100px',
-            width: '112%',
-            backgroundColor: 'lightgrey',
-            marginLeft: '-5.1%'
+            width: '100vw',
+            backgroundColor: 'lightgrey'
           }}
         >
           <Row style={{ justifyContent: 'center' }}>
@@ -147,82 +146,162 @@ class PropertyList extends Component {
             </p>
           </Row>
 
-          <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
-            <Card style={{ width: '90vw', height: '25vh' }}>
-              <CardImg
-                top
-                width="auto"
-                height="70%"
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                alt="Card image cap"
-              />
-              <CardBody style={{ height: '30px', border: 'none' }}>
-                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+          <Container>
+            <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
+              <Card style={{ width: '90vw', height: '25vh' }}>
+                <CardImg
+                  top
+                  width="auto"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+                {/* <CardBody style={{ height: '30px', border: 'none' }}>
+                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
                 {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                 {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </CardText> */}
                 {/* <Button>Button</Button> */}
-              </CardBody>
-            </Card>
-          </Row>
-          <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-            <Card style={{ width: '90vw', height: '25vh' }}>
-              <CardImg
-                top
-                width="auto"
-                height="70%"
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                alt="Card image cap"
-              />
-              <CardBody style={{ height: '30px', border: 'none' }}>
-                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* </CardBody> */}
+              </Card>
+            </Row>
+            <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+              <Card style={{ width: '90vw', height: '25vh' }}>
+                <CardImg
+                  top
+                  width="auto"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+                {/* <CardBody style={{ height: '30px', border: 'none' }}>
+                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
                 {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                 {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </CardText> */}
                 {/* <Button>Button</Button> */}
-              </CardBody>
-            </Card>
-          </Row>
-          <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-            <Card style={{ width: '90vw', height: '25vh' }}>
-              <CardImg
-                top
-                width="auto"
-                height="70%"
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                alt="Card image cap"
-              />
-              <CardBody style={{ height: '30px', border: 'none' }}>
-                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* </CardBody> */}
+              </Card>
+            </Row>
+            <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+              <Card style={{ width: '90vw', height: '25vh' }}>
+                <CardImg
+                  top
+                  width="auto"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+                {/* <CardBody style={{ height: '30px', border: 'none' }}> */}
+                {/* <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
                 {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                 {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </CardText> */}
                 {/* <Button>Button</Button> */}
-              </CardBody>
-            </Card>
-          </Row>
-          <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-            <Card style={{ width: '90vw', height: '25vh' }}>
-              <CardImg
-                top
-                width="auto"
-                height="70%"
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                alt="Card image cap"
-              />
-              <CardBody style={{ height: '30px', border: 'none' }}>
-                <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle>
+                {/* </CardBody> */}
+              </Card>
+            </Row>
+            <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+              <Card style={{ width: '90vw', height: '25vh' }}>
+                <CardImg
+                  top
+                  width="auto"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+                {/* <CardBody style={{ height: '30px', border: 'none' }}>
+                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
                 {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                 {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </CardText> */}
                 {/* <Button>Button</Button> */}
-              </CardBody>
-            </Card>
-          </Row>
+                {/* </CardBody> */}
+              </Card>
+            </Row>
+          </Container>
+
+          <Container>
+            <Row style={{ border: '1px solid red', justifyContent: 'space-between' }}>
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+            </Row>
+
+            <Row style={{ border: '1px solid red', justifyContent: 'space-between' }}>
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+
+              <Card style={{ width: '150px', height: '150px' }}>
+                <CardImg
+                  width="100%"
+                  height="100%"
+                  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                  alt="Card image cap"
+                />
+              </Card>
+            </Row>
+          </Container>
         </Container>
       </div>
     );
