@@ -104,7 +104,7 @@ class HomeView extends Component {
         </Container>
 
         <Container className="d-none d-sm-block" style={{ marginLeft: '-2%' }}>
-          <Map />
+          <Map height="100vh" width="100vw" />
         </Container>
 
         <Container className="d-md-none" style={{ marginTop: '15%' }}>

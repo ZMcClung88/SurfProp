@@ -233,7 +233,7 @@ class SingleProperty extends Component {
 
         <Container style={{ display: 'flex', justifyContent: 'center', marginBottom: '15%' }}>
           <Row style={{ width: '90%' }}>
-            <Map disableDefaultUI={true} />
+            <Map height="50vh" width="100vw" />
           </Row>
         </Container>
       </div>
