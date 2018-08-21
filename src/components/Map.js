@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-// import Marker from 'google-maps-react';
+import Marker from './Marker';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const API_KEY = 'AIzaSyAyg2Jm4q_IaE7gPH3IXkmzBfOJleSa5IA';
@@ -11,8 +11,8 @@ class SimpleMap extends Component {
   }
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 39.768403,
+      lng: -86.158068
     },
     zoom: 11
   };
@@ -35,7 +35,9 @@ class SimpleMap extends Component {
         >
           {/* <Marker name={'Dolores park'} position={{ lat: 37.759703, lng: -122.428093 }} /> */}
           {/* <Marker /> */}
-          <AnyReactComponent options={this.props.options} lat={59.955413} lng={30.337844} text={'Kreyser Avrora'} />
+          <Marker lat={39.768403} lng={-86.158068} text={'Indianapolis'} />
+          {/* <Marker lat={39.7684} lng={30.337844} text={'Kreyser Avrora'} /> */}
+          <AnyReactComponent options={this.props.options} lng={-86.158068} lat={39.768403} text={'aaa'} />
         </GoogleMapReact>
       </div>
     );
