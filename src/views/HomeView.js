@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 import Video from '../media/Gopro_ First Person Surfing.mp4';
 import Map from '../components/Map';
 import { FaChevronDown } from 'react-icons/fa';
+
+import BettyImg from '../media/bette-jane-camp-712007-unsplash.jpg';
+import BrianImg from '../media/brian-babb-256298-unsplash.jpg';
+import HectorImg from '../media/hector-martinez-635780-unsplash.jpg';
+import NivImg from '../media/niv-rozenberg-356666-unsplash.jpg';
+import ArnoImg from '../media/arno-smit-141735-unsplash.jpg';
+import AbigailImg from '../media/abigail-lynn-316133-unsplash.jpg';
+import EpicImg from '../media/epicurrence-64516-unsplash.jpg';
+import NickImg from '../media/nick-baker-98364-unsplash.jpg';
+import OstapImg from '../media/ostap-senyuk-136511-unsplash.jpg';
+import TimCookImg from '../media/tim-cook-97924-unsplash.jpg';
+import TimMImg from '../media/tim-marshall-666366-unsplash.jpg';
 // import { Player, ControlBar } from 'video-react';
 // import Col from 'react-bootstrap/lib/Col';
 import {
@@ -111,13 +123,13 @@ class HomeView extends Component {
           <h6>Find the best surf spots!</h6>
           <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
             <Col>
-              <MenuCards title="Buy" />
+              <MenuCards src={ArnoImg} title="Buy" />
             </Col>
             <Col>
-              <MenuCards isSelected title="Sell" />
+              <MenuCards src={BrianImg} isSelected title="Sell" />
             </Col>
             <Col>
-              <MenuCards title="Rent" />
+              <MenuCards src={NivImg} title="Rent" />
             </Col>
           </Row>
         </Container>
@@ -145,13 +157,7 @@ class HomeView extends Component {
             <Row>
               <Col style={{ display: 'flex', justifyContent: 'center' }}>
                 <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={AbigailImg} alt="Card image cap" />
                   {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
                       <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
@@ -161,13 +167,7 @@ class HomeView extends Component {
               </Col>
               <Col style={{ display: 'flex', justifyContent: 'center' }}>
                 <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={NickImg} alt="Card image cap" />
                   {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
                       <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
@@ -179,13 +179,7 @@ class HomeView extends Component {
             <Row style={{ display: 'flex', justifyContent: 'center' }}>
               <Col style={{ display: 'flex', justifyContent: 'center' }}>
                 <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={OstapImg} alt="Card image cap" />
                   {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
                       <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
@@ -195,13 +189,7 @@ class HomeView extends Component {
               </Col>
               <Col style={{ display: 'flex', justifyContent: 'center' }}>
                 <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={TimCookImg} alt="Card image cap" />
                   {/* <CardBody style={{ marginTop: '-15%' }}>
                     <CardText>
                       <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
@@ -219,15 +207,41 @@ class HomeView extends Component {
         <Container style={{ marginTop: '15%', marginBottom: '15%' }}>
           <Row>
             <Col>
-              <Card>
-                <CardBody className="d-flex flex-column" style={{ height: '350px' }}>
-                  <CardText style={{ fontSize: '22px', fontWeight: 'bold' }}>
-                    Learn to make money off of your properties
-                  </CardText>
-                  <Button className="d-flex pl-3 mt-auto align-self-end" style={{ width: '45%' }} color="info">
-                    Find Out More
-                  </Button>
-                </CardBody>
+              <Card style={{ position: 'relative', height: '350px' }}>
+                {/* <CardBody className="d-flex flex-column" style={{ height: '350px' }}> */}
+                <CardImg style={{ opacity: '0.8' }} width="auto" height="100%" src={EpicImg} alt="Card image cap" />
+                <CardText
+                  className="card-text"
+                  style={{
+                    fontSize: '22px',
+                    fontWeight: 'bold',
+                    top: 0,
+                    left: 0,
+                    position: 'absolute',
+                    width: '66%',
+                    paddingLeft: '5%',
+                    paddingTop: '5%',
+                    fontSize: '18px',
+                    fontFamily: 'Times New Roman'
+                  }}
+                >
+                  Learn to make money off of your property
+                </CardText>
+                <Button
+                  className="d-flex pl-3 mt-auto align-self-end"
+                  style={{
+                    width: '45%',
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                    marginBottom: '5%',
+                    marginRight: '5%'
+                  }}
+                  color="info"
+                >
+                  Find Out More
+                </Button>
+                {/* </CardBody> */}
               </Card>
             </Col>
           </Row>

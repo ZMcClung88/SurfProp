@@ -6,13 +6,7 @@ class MenuCards extends Component {
     return (
       <div>
         <Card style={{ width: '150px', height: '100px' }}>
-          <CardImg
-            top
-            width="auto"
-            height="70%"
-            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-            alt="Card image cap"
-          />
+          <CardImg top width="auto" height="70%" src={this.props.src} alt="Card image cap" />
           <CardBody style={{ height: '30px', border: 'none' }}>
             <CardTitle style={{ textAlign: 'center', marginTop: '-15%' }}>{this.props.title}</CardTitle>
             {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
