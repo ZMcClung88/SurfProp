@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import Video from '../media/Gopro_ First Person Surfing.mp4';
 import Map from '../components/Map';
 import { FaChevronDown } from 'react-icons/fa';
+import OnImagesLoaded from 'react-on-images-loaded';
+// import Spinner from 'react-spinkit';
+import { BeatLoader } from 'react-spinners';
+import Spinner from 'react-spinner-material';
 
 import BettyImg from '../media/bette-jane-camp-712007-unsplash.jpg';
 import BrianImg from '../media/brian-babb-256298-unsplash.jpg';
@@ -47,7 +51,8 @@ class HomeView extends Component {
 
     this.state = {
       isOpen: false,
-      videoURL: '../media/Gopro_ First Person Surfing.mp4'
+      videoURL: '../media/Gopro_ First Person Surfing.mp4',
+      loaded: false
     };
   }
 
@@ -58,193 +63,213 @@ class HomeView extends Component {
   };
 
   render() {
+    const hiddenStyle = { display: 'none' };
+    const visibleStyle = {};
+
     return (
       <div>
-        <Navbar fixed="top" color="light" light expand="lg">
-          <NavbarBrand href="/">surfProp</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem className="ml-auto">
-                <NavLink tag={Link} to="/properties">
-                  BUY
-                </NavLink>
-              </NavItem>
-              <NavItem className="ml-auto">
-                <NavLink href="#">SELL</NavLink>
-              </NavItem>
-              <NavItem className="ml-auto">
-                <NavLink href="#">RENT</NavLink>
-              </NavItem>
-              <NavItem className="ml-auto">
-                <NavLink href="#">BLOG</NavLink>
-              </NavItem>
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
-            </Nav>
-          </Collapse>
-        </Navbar>
-
-        <Container className="d-none d-sm-block" style={{ width: '90vw', marginLeft: '-2%' }}>
-          <video style={{ width: '100vw' }} id="background-video" muted="true" loop autoPlay>
-            <source src={Video} type="video/mp4" />
-            <source src={Video} type="video/ogg" />
-            Your browser does not support the video tag.
-          </video>
-          <Row
-            style={{
-              marginLeft: '0%',
-              marginTop: '-10vh',
-              width: '100vw',
-              display: 'flex',
-              justifyContent: 'center'
-            }}
+        <div style={this.state.loaded ? visibleStyle : hiddenStyle}>
+          <OnImagesLoaded
+            onLoaded={() => this.setState({ loaded: true })}
+            onTimeout={() => this.setState({ loaded: true })}
+            timeout={7000}
           >
-            <Col style={{ display: 'flex', justifyContent: 'center' }}>
-              <FaChevronDown style={{ color: '#fff' }} size="3em" />
-            </Col>
-          </Row>
-        </Container>
+            <Navbar style={this.state.loaded ? visibleStyle : hiddenStyle} fixed="top" color="light" light expand="lg">
+              <NavbarBrand href="/">surfProp</NavbarBrand>
+              <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
+                <Nav className="ml-auto" navbar>
+                  <NavItem className="ml-auto">
+                    <NavLink tag={Link} to="/properties">
+                      BUY
+                    </NavLink>
+                  </NavItem>
+                  <NavItem className="ml-auto">
+                    <NavLink href="#">SELL</NavLink>
+                  </NavItem>
+                  <NavItem className="ml-auto">
+                    <NavLink href="#">RENT</NavLink>
+                  </NavItem>
+                  <NavItem className="ml-auto">
+                    <NavLink href="#">BLOG</NavLink>
+                  </NavItem>
+                  {/* <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                      Options
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem>Option 1</DropdownItem>
+                      <DropdownItem>Option 2</DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem>Reset</DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown> */}
+                </Nav>
+              </Collapse>
+            </Navbar>
 
-        <Container className="d-none d-sm-block" style={{ marginLeft: '-2%' }}>
-          <Map height="100vh" width="100vw" />
-        </Container>
+            <Container className="d-none d-sm-block" style={{ width: '90vw', marginLeft: '-2%' }}>
+              <video style={{ width: '100vw' }} id="background-video" muted="true" loop autoPlay>
+                <source src={Video} type="video/mp4" />
+                <source src={Video} type="video/ogg" />
+                Your browser does not support the video tag.
+              </video>
+              <Row
+                style={{
+                  marginLeft: '0%',
+                  marginTop: '-10vh',
+                  width: '100vw',
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}
+              >
+                <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                  <FaChevronDown style={{ color: '#fff' }} size="3em" />
+                </Col>
+              </Row>
+            </Container>
 
-        <Container className="d-md-none" style={{ marginTop: '35%' }}>
-          <h6>Find the best surf spots!</h6>
-          <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
-            <Col>
-              <MenuCards src={ArnoImg} title="Buy" />
-            </Col>
-            <Col>
-              <MenuCards src={BrianImg} isSelected title="Sell" />
-            </Col>
-            <Col>
-              <MenuCards src={NivImg} title="Rent" />
-            </Col>
-          </Row>
-        </Container>
+            <Container className="d-none d-sm-block" style={{ marginLeft: '-2%' }}>
+              <Map height="100vh" width="100vw" />
+            </Container>
 
-        <Container className="d-md-none" style={{ marginTop: '15%' }}>
-          <h6>Introducing Surf Properties</h6>
-          <Row>
-            <Col>
-              <Card>
-                <CardBody style={{ height: '350px' }}>
-                  <CardText style={{ fontSize: '12px', width: '50%' }}>
-                    Bacon ipsum dolor amet pig chuck buffalo pork filet mignon meatball fatback kielbasa ball tip jowl
-                    shoulder hamburger boudin.
-                  </CardText>
-                  <Button color="info">Explore Spots</Button>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+            <Container className="d-md-none" style={{ marginTop: '35%' }}>
+              <h6>Find the best surf spots!</h6>
+              <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
+                <Col>
+                  <MenuCards src={ArnoImg} title="Buy" />
+                </Col>
+                <Col>
+                  <MenuCards src={BrianImg} isSelected title="Sell" />
+                </Col>
+                <Col>
+                  <MenuCards src={NivImg} title="Rent" />
+                </Col>
+              </Row>
+            </Container>
 
-        <Container style={{ marginTop: '15%' }}>
-          <h6 style={{ marginBottom: '5%' }}>Spots around the world</h6>
-          <Container>
-            <Row>
-              <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg top width="auto" height="100%" src={AbigailImg} alt="Card image cap" />
-                  {/* <CardBody style={{ marginTop: '-15%' }}>
-                    <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
+            <Container className="d-md-none" style={{ marginTop: '15%' }}>
+              <h6>Introducing Surf Properties</h6>
+              <Row>
+                <Col>
+                  <Card>
+                    <CardBody style={{ height: '350px' }}>
+                      <CardText style={{ fontSize: '12px', width: '50%' }}>
+                        Bacon ipsum dolor amet pig chuck buffalo pork filet mignon meatball fatback kielbasa ball tip
+                        jowl shoulder hamburger boudin.
+                      </CardText>
+                      <Button color="info">Explore Spots</Button>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+
+            <Container style={{ marginTop: '15%' }}>
+              <h6 style={{ marginBottom: '5%' }}>Spots around the world</h6>
+              <Container>
+                <Row>
+                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
+                      <CardImg top width="auto" height="100%" src={AbigailImg} alt="Card image cap" />
+                      {/* <CardBody style={{ marginTop: '-15%' }}>
+                        <CardText>
+                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
+                        </CardText>
+                      </CardBody> */}
+                    </Card>
+                  </Col>
+                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
+                      <CardImg top width="auto" height="100%" src={NickImg} alt="Card image cap" />
+                      {/* <CardBody style={{ marginTop: '-15%' }}>
+                        <CardText>
+                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
+                        </CardText>
+                      </CardBody> */}
+                    </Card>
+                  </Col>
+                </Row>
+                <Row style={{ display: 'flex', justifyContent: 'center' }}>
+                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
+                      <CardImg top width="auto" height="100%" src={OstapImg} alt="Card image cap" />
+                      {/* <CardBody style={{ marginTop: '-15%' }}>
+                        <CardText>
+                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
+                        </CardText>
+                      </CardBody> */}
+                    </Card>
+                  </Col>
+                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
+                      <CardImg top width="auto" height="100%" src={TimCookImg} alt="Card image cap" />
+                      {/* <CardBody style={{ marginTop: '-15%' }}>
+                        <CardText>
+                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
+                        </CardText>
+                      </CardBody> */}
+                    </Card>
+                  </Col>
+                </Row>
+              </Container>
+              <div style={{ width: '100%', textAlign: 'center', marginBottom: '5%' }}>
+                <Button style={{ width: '50%' }}>Show All</Button>
+              </div>
+            </Container>
+
+            <Container style={{ marginTop: '15%', marginBottom: '15%' }}>
+              <Row>
+                <Col>
+                  <Card style={{ position: 'relative', height: '350px' }}>
+                    {/* <CardBody className="d-flex flex-column" style={{ height: '350px' }}> */}
+                    <CardImg style={{ opacity: '0.8' }} width="auto" height="100%" src={EpicImg} alt="Card image cap" />
+                    <CardText
+                      className="card-text"
+                      style={{
+                        fontSize: '22px',
+                        fontWeight: 'bold',
+                        top: 0,
+                        left: 0,
+                        position: 'absolute',
+                        width: '66%',
+                        paddingLeft: '5%',
+                        paddingTop: '5%',
+                        fontSize: '18px'
+                      }}
+                    >
+                      Learn to make money off of your property
                     </CardText>
-                  </CardBody> */}
-                </Card>
-              </Col>
-              <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg top width="auto" height="100%" src={NickImg} alt="Card image cap" />
-                  {/* <CardBody style={{ marginTop: '-15%' }}>
-                    <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                    </CardText>
-                  </CardBody> */}
-                </Card>
-              </Col>
-            </Row>
-            <Row style={{ display: 'flex', justifyContent: 'center' }}>
-              <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg top width="auto" height="100%" src={OstapImg} alt="Card image cap" />
-                  {/* <CardBody style={{ marginTop: '-15%' }}>
-                    <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                    </CardText>
-                  </CardBody> */}
-                </Card>
-              </Col>
-              <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                  <CardImg top width="auto" height="100%" src={TimCookImg} alt="Card image cap" />
-                  {/* <CardBody style={{ marginTop: '-15%' }}>
-                    <CardText>
-                      <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                    </CardText>
-                  </CardBody> */}
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-          <div style={{ width: '100%', textAlign: 'center', marginBottom: '5%' }}>
-            <Button style={{ width: '50%' }}>Show All</Button>
+                    <Button
+                      className="d-flex pl-3 mt-auto align-self-end"
+                      style={{
+                        width: '45%',
+                        position: 'absolute',
+                        bottom: 0,
+                        right: 0,
+                        marginBottom: '5%',
+                        marginRight: '5%'
+                      }}
+                      color="info"
+                    >
+                      Find Out More
+                    </Button>
+                    {/* </CardBody> */}
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          </OnImagesLoaded>
+        </div>
+
+        <div style={!this.state.loaded ? visibleStyle : hiddenStyle}>
+          {/* <Spinner /> */}
+          <div
+            style={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+          >
+            <BeatLoader />
           </div>
-        </Container>
-
-        <Container style={{ marginTop: '15%', marginBottom: '15%' }}>
-          <Row>
-            <Col>
-              <Card style={{ position: 'relative', height: '350px' }}>
-                {/* <CardBody className="d-flex flex-column" style={{ height: '350px' }}> */}
-                <CardImg style={{ opacity: '0.8' }} width="auto" height="100%" src={EpicImg} alt="Card image cap" />
-                <CardText
-                  className="card-text"
-                  style={{
-                    fontSize: '22px',
-                    fontWeight: 'bold',
-                    top: 0,
-                    left: 0,
-                    position: 'absolute',
-                    width: '66%',
-                    paddingLeft: '5%',
-                    paddingTop: '5%',
-                    fontSize: '18px'
-                  }}
-                >
-                  Learn to make money off of your property
-                </CardText>
-                <Button
-                  className="d-flex pl-3 mt-auto align-self-end"
-                  style={{
-                    width: '45%',
-                    position: 'absolute',
-                    bottom: 0,
-                    right: 0,
-                    marginBottom: '5%',
-                    marginRight: '5%'
-                  }}
-                  color="info"
-                >
-                  Find Out More
-                </Button>
-                {/* </CardBody> */}
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+        </div>
       </div>
     );
   }
