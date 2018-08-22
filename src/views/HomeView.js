@@ -60,7 +60,7 @@ class HomeView extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="lg">
+        <Navbar fixed="top" color="light" light expand="lg">
           <NavbarBrand href="/">surfProp</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -119,7 +119,7 @@ class HomeView extends Component {
           <Map height="100vh" width="100vw" />
         </Container>
 
-        <Container className="d-md-none" style={{ marginTop: '15%' }}>
+        <Container className="d-md-none" style={{ marginTop: '35%' }}>
           <h6>Find the best surf spots!</h6>
           <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
             <Col>
@@ -221,8 +221,7 @@ class HomeView extends Component {
                     width: '66%',
                     paddingLeft: '5%',
                     paddingTop: '5%',
-                    fontSize: '18px',
-                    fontFamily: 'Times New Roman'
+                    fontSize: '18px'
                   }}
                 >
                   Learn to make money off of your property
