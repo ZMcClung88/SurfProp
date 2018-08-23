@@ -94,7 +94,7 @@ class SingleProperty extends Component {
         </Navbar>
 
         {/* <h1>Single Property View</h1> */}
-        <Carousel />
+        <Carousel style={{ marginTop: '35%' }} />
 
         <Container style={{ paddingTop: '10%', paddingLeft: '10%' }}>
           <Row style={{ flexDirection: 'column' }}>
