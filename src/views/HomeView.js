@@ -78,19 +78,19 @@ class HomeView extends Component {
               <NavbarBrand href="/">surfProp</NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                  <NavItem className="ml-auto">
+                <Nav navbar>
+                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
                     <NavLink tag={Link} to="/properties">
                       BUY
                     </NavLink>
                   </NavItem>
-                  <NavItem className="ml-auto">
+                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
                     <NavLink href="#">SELL</NavLink>
                   </NavItem>
-                  <NavItem className="ml-auto">
+                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
                     <NavLink href="#">RENT</NavLink>
                   </NavItem>
-                  <NavItem className="ml-auto">
+                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
                     <NavLink href="#">BLOG</NavLink>
                   </NavItem>
                   {/* <UncontrolledDropdown nav inNavbar>
@@ -133,33 +133,68 @@ class HomeView extends Component {
               <Map height="100vh" width="100vw" />
             </Container>
 
-            <Container className="d-md-none" style={{ marginTop: '35%' }}>
-              <h6>Find the best surf spots!</h6>
-              <Row style={{ overflow: 'scroll', flexWrap: 'nowrap' }}>
-                <Col>
-                  <MenuCards src={ArnoImg} title="Buy" />
-                </Col>
-                <Col>
-                  <MenuCards src={BrianImg} isSelected title="Sell" />
-                </Col>
-                <Col>
-                  <MenuCards src={NivImg} title="Rent" />
-                </Col>
-              </Row>
+            <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>
+              <div style={{ overflow: 'auto' }}>
+                <h6>Find the best surf spots!</h6>
+                <Row style={{ overflowY: 'scroll', flexWrap: 'nowrap' }}>
+                  <Col>
+                    <MenuCards src={ArnoImg} title="Buy" />
+                  </Col>
+                  <Col>
+                    <MenuCards src={BrianImg} isSelected title="Sell" />
+                  </Col>
+                  <Col>
+                    <MenuCards src={NivImg} title="Rent" />
+                  </Col>
+                </Row>
+              </div>
             </Container>
 
             <Container className="d-md-none" style={{ marginTop: '15%' }}>
               <h6>Introducing Surf Properties</h6>
               <Row>
                 <Col>
-                  <Card>
-                    <CardBody style={{ height: '350px' }}>
-                      <CardText style={{ fontSize: '12px', width: '50%' }}>
-                        Bacon ipsum dolor amet pig chuck buffalo pork filet mignon meatball fatback kielbasa ball tip
-                        jowl shoulder hamburger boudin.
-                      </CardText>
-                      <Button color="info">Explore Spots</Button>
-                    </CardBody>
+                  <Card style={{ position: 'relative', height: '350px' }}>
+                    <CardImg
+                      style={{ opacity: '0.8' }}
+                      top
+                      width="auto"
+                      height="100%"
+                      src={AbigailImg}
+                      alt="Card image cap"
+                    />
+                    {/* <CardBody style={{ height: '350px' }}> */}
+                    <CardText
+                      style={{
+                        fontSize: '22px',
+                        fontWeight: 'bold',
+                        color: '#fff',
+                        top: 0,
+                        left: 0,
+                        position: 'absolute',
+                        width: '66%',
+                        paddingLeft: '5%',
+                        paddingTop: '5%',
+                        fontSize: '18px'
+                      }}
+                    >
+                      Bacon ipsum dolor amet pig chuck buffalo pork filet mignon meatball fatback kielbasa ball tip jowl
+                      shoulder hamburger boudin.
+                    </CardText>
+                    <Button
+                      style={{
+                        width: '45%',
+                        position: 'absolute',
+                        bottom: 0,
+                        right: 0,
+                        marginBottom: '5%',
+                        marginRight: '5%'
+                      }}
+                      color="info"
+                    >
+                      Explore Spots
+                    </Button>
+                    {/* </CardBody> */}
                   </Card>
                 </Col>
               </Row>
@@ -247,8 +282,7 @@ class HomeView extends Component {
                         position: 'absolute',
                         bottom: 0,
                         right: 0,
-                        marginBottom: '5%',
-                        marginRight: '5%'
+                        marginBottom: '5%'
                       }}
                       color="info"
                     >

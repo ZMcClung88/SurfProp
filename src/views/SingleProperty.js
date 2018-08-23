@@ -59,7 +59,7 @@ class SingleProperty extends Component {
   render() {
     return (
       <div style={{ height: '50vh', width: '100vw' }}>
-        <Navbar color="light" light expand="md">
+        <Navbar fixed="top" color="light" light expand="md">
           <NavbarBrand href="/">surfProp</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -138,9 +138,9 @@ class SingleProperty extends Component {
           </Row>
         </Container>
 
-        <PageBreak />
+        {/* <PageBreak /> */}
 
-        <Container style={{ marginBottom: '15%' }}>
+        {/* <Container style={{ marginBottom: '15%' }}>
           <Row style={{ fontSize: '28px', paddingLeft: '10%' }}>Photos</Row>
 
           <Row style={{ display: 'flex', justifyContent: 'space-around', marginTop: '10%', marginBottom: '10%' }}>
@@ -154,7 +154,7 @@ class SingleProperty extends Component {
                 alignItems: 'center'
               }}
             >
-              <h5>House</h5>
+              <CardImg style={{ opacity: '0.8' }} top width="auto" height="100%" src={DerekImg} alt="Card image cap" />
             </Card>
           </Row>
 
@@ -169,7 +169,7 @@ class SingleProperty extends Component {
                 alignItems: 'center'
               }}
             >
-              <h5>House</h5>
+              <CardImg style={{ opacity: '0.8' }} top width="auto" height="100%" src={JoleneImg} alt="Card image cap" />
             </Card>
             <Card
               onClick={this.toggleModal}
@@ -186,23 +186,23 @@ class SingleProperty extends Component {
           </Row>
 
           <Modal style={{ marginTop: '20%' }} isOpen={this.state.modal} toggle={this.toggleModal}>
-            {/* <ModalHeader style={{ justifyContent: 'center' }}>Exclusive Access</ModalHeader> */}
-            {/* <ModalBody>
-                <input
-                  onChange={this.emailChange}
-                  type="email"
-                  placeholder="Email"
-                  style={{ width: '100%', height: '36px', paddingLeft: '5px', marginTop: '5px' }}
-                />
-              </ModalBody>
-              <ModalFooter>
-                <Button type="submit" onClick={this.handleClick} color="primary">
-                  Subscribe
-                </Button>
-              </ModalFooter> */}
+            <ModalHeader style={{ justifyContent: 'center' }}>Exclusive Access</ModalHeader>
+            <ModalBody>
+              <input
+                onChange={this.emailChange}
+                type="email"
+                placeholder="Email"
+                style={{ width: '100%', height: '36px', paddingLeft: '5px', marginTop: '5px' }}
+              />
+            </ModalBody>
+            <ModalFooter>
+              <Button type="submit" onClick={this.handleClick} color="primary">
+                Subscribe
+              </Button>
+            </ModalFooter>
             <Carousel2 />
           </Modal>
-        </Container>
+        </Container> */}
 
         <PageBreak />
 
