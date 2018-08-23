@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardText, Input } from 'reactstrap';
 import firebase from 'firebase';
+import config from '../config';
 import Spinner from 'react-spinkit';
+import { BrowserRouter as Router, Redirect, Link, Route, Switch, withRouter } from 'react-router-dom';
+
+import HomeView from './HomeView';
 
 class LoginView extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { email: '', password: '', error: '', loading: false };
+    this.state = {
+      email: '',
+      password: '',
+      error: '',
+      loading: false,
+      redirect: false
+    };
   }
+  componentDidMount = () => {
+    firebase.initializeApp(config);
+  };
 
   onButtonClick = () => {
-    const { email, password } = this.state;
+    const { email, password, error } = this.state;
 
     this.setState({ error: '', loading: true });
 
@@ -32,7 +45,7 @@ class LoginView extends Component {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(this.onLoginSuccess.bind(this))
+      .then(this.onLoginSuccess)
       .catch(() => {
         firebase
           .auth()
@@ -46,14 +59,17 @@ class LoginView extends Component {
     this.setState({ error: 'Authentication Failed', loading: false });
   }
 
-  onLoginSuccess() {
+  onLoginSuccess = () => {
     this.setState({
       email: '',
       password: '',
       loading: false,
-      error: ''
+      error: '',
+      redirect: true
     });
-  }
+    console.log('here here here!!!');
+    this.props.history.push('/');
+  };
 
   renderButton() {
     if (this.state.loading) {
@@ -81,7 +97,7 @@ class LoginView extends Component {
             placeholder="password"
             label="Password"
             value={this.state.password}
-            onChange={password => this.setState({ password })}
+            onChange={event => this.setState({ password: event.target.value })}
           />
         </CardBody>
 
@@ -101,4 +117,4 @@ const styles = {
   }
 };
 
-export default LoginView;
+export default withRouter(LoginView);
