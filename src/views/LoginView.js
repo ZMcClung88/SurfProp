@@ -67,7 +67,6 @@ class LoginView extends Component {
       error: '',
       redirect: true
     });
-    console.log('here here here!!!');
     this.props.history.push('/');
   };
 

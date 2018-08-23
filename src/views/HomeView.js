@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Video from '../media/Gopro_ First Person Surfing.mp4';
 import Map from '../components/Map';
 import { FaChevronDown } from 'react-icons/fa';
@@ -138,13 +138,13 @@ class HomeView extends Component {
                 <h6>Find the best surf spots!</h6>
                 <Row style={{ overflowY: 'scroll', flexWrap: 'nowrap' }}>
                   <Col>
-                    <MenuCards src={ArnoImg} title="Buy" />
+                    <MenuCards onClick={this.onBuyClick} src={ArnoImg} title="Buy" />
                   </Col>
                   <Col>
-                    <MenuCards src={BrianImg} isSelected title="Sell" />
+                    <MenuCards onClick={this.onSellClick} src={BrianImg} isSelected title="Sell" />
                   </Col>
                   <Col>
-                    <MenuCards src={NivImg} title="Rent" />
+                    <MenuCards onClick={this.onRentClick} src={NivImg} title="Rent" />
                   </Col>
                 </Row>
               </div>
@@ -309,4 +309,4 @@ class HomeView extends Component {
   }
 }
 
-export default HomeView;
+export default withRouter(HomeView);
