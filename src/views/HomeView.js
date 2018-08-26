@@ -62,6 +62,10 @@ class HomeView extends Component {
     });
   };
 
+  onClick = () => {
+    this.props.history.push('/properties');
+  };
+
   render() {
     const hiddenStyle = { display: 'none' };
     const visibleStyle = {};
@@ -182,6 +186,7 @@ class HomeView extends Component {
                       shoulder hamburger boudin.
                     </CardText>
                     <Button
+                      onClick={this.onClick}
                       style={{
                         width: '45%',
                         position: 'absolute',

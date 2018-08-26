@@ -35,7 +35,10 @@ class NewListing extends Component {
 
     this.state = {
       isOpen: false,
-      modal: false
+      modal: false,
+      name: '',
+      price: '',
+      location: ''
     };
   }
   toggle = () => {
@@ -43,6 +46,8 @@ class NewListing extends Component {
       isOpen: !this.state.isOpen
     });
   };
+
+  onButtonClick = () => {};
 
   render() {
     return (
@@ -354,7 +359,7 @@ class NewListing extends Component {
 
         <Container style={{ marginTop: '15%', marginBottom: '15%' }}>
           <Row style={{ display: 'flex', justifyContent: 'center' }}>
-            <Button bsStyle="primary" style={{ height: '50px', width: '90vw' }}>
+            <Button onClick={this.onButtonClick} bsStyle="primary" style={{ height: '50px', width: '90vw' }}>
               POST
             </Button>
           </Row>
