@@ -133,8 +133,16 @@ class HomeView extends Component {
               </Row>
             </Container>
 
-            <Container className="d-none d-sm-block" style={{ marginLeft: '-2%' }}>
-              <Map height="100vh" width="100vw" />
+            <Container
+              className="d-none d-sm-block"
+              style={{
+                marginTop: '5%',
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw'
+              }}
+            >
+              <Map height="90vh" width="90vw" />
             </Container>
 
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>

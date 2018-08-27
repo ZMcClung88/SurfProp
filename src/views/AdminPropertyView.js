@@ -164,13 +164,13 @@ class PropertyList extends Component {
           </Container>
 
           {this.state.toggleView ? (
-            <Container id="linear">
+            <Container style={{ border: '1px solid green' }} id="linear">
               <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
                   <CardImg
                     top
                     width="auto"
-                    height="100%"
+                    height="auto"
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
