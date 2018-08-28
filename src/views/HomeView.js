@@ -251,7 +251,7 @@ class HomeView extends Component {
                         fontSize: '18px'
                       }}
                     >
-                      Learn to make money off of your property
+                      Learn how you can make money off of your property
                     </CardText>
                     <Button
                       className="d-flex pl-3 mt-auto align-self-end"
