@@ -38,16 +38,31 @@ class NewListing extends Component {
       modal: false,
       name: '',
       price: '',
-      location: ''
+      address: '',
+      type: '',
+      bed: 0,
+      bath: 0,
+      description: '',
+      pics: [],
+      features: []
     };
   }
+
+  componentDidMount() {
+    firebase.initializeApp(config);
+
+    // firebase.auth().signInAnonymously();
+  }
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   };
 
-  onButtonClick = () => {};
+  onButtonClick = () => {
+    console.log('button working');
+  };
 
   render() {
     return (
