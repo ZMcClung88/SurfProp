@@ -33,10 +33,7 @@ class SimpleMap extends Component {
           options={this.props.options}
           disableDefaultUI={true}
         >
-          {/* <Marker name={'Dolores park'} position={{ lat: 37.759703, lng: -122.428093 }} /> */}
-          {/* <Marker /> */}
           <Marker lat={39.768403} lng={-86.158068} text={'Indianapolis'} />
-          {/* <Marker lat={39.7684} lng={30.337844} text={'Kreyser Avrora'} /> */}
           <AnyReactComponent options={this.props.options} lng={-86.158068} lat={39.768403} text={'aaa'} />
         </GoogleMapReact>
       </div>

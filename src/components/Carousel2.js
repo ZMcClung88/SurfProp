@@ -6,37 +6,8 @@ import { StyleRoot } from 'radium';
 class DemoCarousel extends Component {
   render() {
     return (
-      // <Carousel showArrows={true} showThumbs={true}>
-      //   <div>
-      //     <img src="https://picsum.photos/458/354" />
-      //     <p className="legend">Legend 1</p>
-      //   </div>
-      //   <div>
-      //     <img src="https://picsum.photos/458/354?random&time=1534642409645" />
-      //     <p className="legend">Legend 2</p>
-      //   </div>
-      //   <div>
-      //     <img src="https://picsum.photos/g/458/354" />
-      //     <p className="legend">Legend 3</p>
-      //   </div>
-      // </Carousel>
       <StyleRoot>
-        <Coverflow
-          displayQuantityOfSide={2}
-          navigation
-          infiniteScroll
-          enableHeading
-          // media={{
-          //   '@media (max-width: 900px)': {
-          //     width: '100vw',
-          //     height: '100vh'
-          //   },
-          //   '@media (min-width: 900px)': {
-          //     width: '100vw',
-          //     height: '100vh'
-          //   }
-          // }}
-        >
+        <Coverflow displayQuantityOfSide={2} navigation infiniteScroll enableHeading>
           <img
             src="https://picsum.photos/458/354?random&time=1534643979982"
             // alt="Album one"

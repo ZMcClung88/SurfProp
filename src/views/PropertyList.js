@@ -21,10 +21,6 @@ import {
   NavLink,
   UncontrolledDropdown,
   Row
-  // Dropdown,
-  // DropdownToggle,
-  // DropdownMenu,
-  // DropdownItem
 } from 'reactstrap';
 import Dropdown from '../components/Dropdown';
 
@@ -80,17 +76,6 @@ class PropertyList extends Component {
               <NavItem className="ml-auto">
                 <NavLink href="#">BLOG</NavLink>
               </NavItem>
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
@@ -121,27 +106,6 @@ class PropertyList extends Component {
             <Dropdown title="TYPE" />
             <Dropdown title="MIN PRICE" />
             <Dropdown title="MAX PRICE" />
-
-            {/* <Dropdown placeholder="Select Friend" fluid selection options={categoryOptions} /> */}
-            {/* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle2}>
-              <DropdownToggle color="info" caret>
-                BUY
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>BUY</DropdownItem>
-                <DropdownItem>RENT</DropdownItem>
-                <DropdownItem>RETREAT</DropdownItem>
-              </DropdownMenu>
-            </Dropdown> */}
-            {/* <DropdownButton>
-              <MenuItem eventKey="1">Action</MenuItem>
-              <MenuItem eventKey="2">Another action</MenuItem>
-              <MenuItem eventKey="3" active>
-                Active Item
-              </MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey="4">Separated link</MenuItem>
-            </DropdownButton> */}
           </Row>
         </Container>
 
@@ -170,14 +134,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}>
-                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
@@ -189,14 +145,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}>
-                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
@@ -208,14 +156,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}> */}
-                  {/* <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
@@ -227,14 +167,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}>
-                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
             </Container>

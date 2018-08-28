@@ -43,7 +43,6 @@ class Blog extends Component {
   render() {
     return (
       <div>
-        {/* <Navbar /> */}
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">surfProp</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -63,17 +62,6 @@ class Blog extends Component {
               <NavItem className="ml-auto">
                 <NavLink href="#">BLOG</NavLink>
               </NavItem>
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
@@ -97,11 +85,6 @@ class Blog extends Component {
                 />
                 <CardBody style={{ height: '30px', border: 'none' }}>
                   <CardTitle style={{ textAlign: 'center', marginTop: '-15%' }}>{this.props.title}</CardTitle>
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
                 </CardBody>
               </Card>
             </Col>
@@ -118,11 +101,6 @@ class Blog extends Component {
               />
               <CardBody style={{ height: '30px', border: 'none' }}>
                 <CardTitle style={{ textAlign: 'center', marginTop: '-15%' }}>{this.props.title}</CardTitle>
-                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
-                {/* <Button>Button</Button> */}
               </CardBody>
             </Card>
           </Row>
@@ -138,11 +116,6 @@ class Blog extends Component {
               />
               <CardBody style={{ height: '30px', border: 'none' }}>
                 <CardTitle style={{ textAlign: 'center', marginTop: '-15%' }}>{this.props.title}</CardTitle>
-                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
-                {/* <Button>Button</Button> */}
               </CardBody>
             </Card>
           </Row>
@@ -158,11 +131,6 @@ class Blog extends Component {
               />
               <CardBody style={{ height: '30px', border: 'none' }}>
                 <CardTitle style={{ textAlign: 'center', marginTop: '-15%' }}>{this.props.title}</CardTitle>
-                {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                {/* <CardText>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </CardText> */}
-                {/* <Button>Button</Button> */}
               </CardBody>
             </Card>
           </Row>

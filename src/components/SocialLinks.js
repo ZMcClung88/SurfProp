@@ -9,12 +9,11 @@ class SocialLinks extends Component {
           style={{
             display: 'flex',
             marginTop: '-75px',
-            // border: '1px solid #fff',
+
             width: '75px',
             justifyContent: 'space-around'
           }}
         >
-          {/* <h1>Hello</h1> */}
           <div>
             <SocialIcon
               style={{ height: 25, width: 25 }}

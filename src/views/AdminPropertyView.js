@@ -21,10 +21,6 @@ import {
   NavLink,
   UncontrolledDropdown,
   Row
-  // Dropdown,
-  // DropdownToggle,
-  // DropdownMenu,
-  // DropdownItem
 } from 'reactstrap';
 import Dropdown from '../components/Dropdown';
 
@@ -84,82 +80,12 @@ class PropertyList extends Component {
               <NavItem className="ml-auto">
                 <NavLink href="#">BLOG</NavLink>
               </NavItem>
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
 
-        {/* <Container style={{ marginLeft: '-15px', width: '100vw' }}>
-          <Row>
-            <Col>
-              <div style={{ width: '50vw', height: '100vh' }}>
-                <Map height="100vh" width="100vw" />
-              </div>
-            </Col>
-          </Row>
-        </Container> */}
-
-        {/* <Container
-          style={{
-            height: '100px',
-            width: '100%',
-            backgroundColor: 'lightgrey'
-          }}
-        >
-          <Row style={{ justifyContent: 'center' }}>
-            <Input
-              placeholder="Address, City, State, Zip"
-              style={{ width: '80vw', height: '25px', marginTop: '3%', marginBottom: '3%' }}
-            />
-            <Dropdown title="BUY" />
-            <Dropdown title="TYPE" />
-            <Dropdown title="MIN PRICE" />
-            <Dropdown title="MAX PRICE" /> */}
-
-        {/* <Dropdown placeholder="Select Friend" fluid selection options={categoryOptions} /> */}
-        {/* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle2}>
-              <DropdownToggle color="info" caret>
-                BUY
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>BUY</DropdownItem>
-                <DropdownItem>RENT</DropdownItem>
-                <DropdownItem>RETREAT</DropdownItem>
-              </DropdownMenu>
-            </Dropdown> */}
-        {/* <DropdownButton>
-              <MenuItem eventKey="1">Action</MenuItem>
-              <MenuItem eventKey="2">Another action</MenuItem>
-              <MenuItem eventKey="3" active>
-                Active Item
-              </MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey="4">Separated link</MenuItem>
-            </DropdownButton> */}
-        {/* </Row>
-        </Container> */}
-
         <Container>
-          {/* <Row style={{ marginTop: '15%' }}>
-            <h1 style={{ fontSize: '16px' }}>Intoducing Surf Propertiess</h1>
-            <p style={{ fontSize: '11px' }}>
-              Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
-              venenatis sit amet finibus quis, tempus in lectus.
-            </p>
-          </Row> */}
-
           <Container>
-            {/* <Button>linear</Button> */}
             <Button onClick={this.addProperty}>Add Property</Button>
           </Container>
 
@@ -174,14 +100,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}>
-                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
@@ -193,14 +111,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}>
-                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
@@ -212,14 +122,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}> */}
-                  {/* <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
@@ -231,14 +133,6 @@ class PropertyList extends Component {
                     src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
                     alt="Card image cap"
                   />
-                  {/* <CardBody style={{ height: '30px', border: 'none' }}>
-                  <CardTitle style={{ marginTop: '-5%' }}>Surf Villa</CardTitle> */}
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  {/* <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText> */}
-                  {/* <Button>Button</Button> */}
-                  {/* </CardBody> */}
                 </Card>
               </Row>
             </Container>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
-// import Carousel from 'react-responsive-carousel';
 
 import BernardImg from '../media/bernard-hermant-607741-unsplash.jpg';
 import ArminImg from '../media/armin-djuhic-609206-unsplash.jpg';

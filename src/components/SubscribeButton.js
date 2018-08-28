@@ -81,12 +81,9 @@ class SubscribeButton extends Component {
   };
 
   emailChange = event => {
-    // let email = this.state.email;
-
     this.setState({
       email: event.target.value
     });
-    // console.log(this.state.email);
   };
 
   showAlert = () => {
@@ -101,19 +98,7 @@ class SubscribeButton extends Component {
     }
   };
 
-  // handleClick = () => {
-  //   console.log('state', this.state.modal);
-  //   this.setState({
-  //     modal: !this.state.modal
-  //   });
-  // };
-
   render() {
-    // const externalCloseBtn = (
-    //   <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>
-    //     &times;
-    //   </button>
-    // );
     return (
       <div ref={node => (this.node = node)}>
         <Button outline color="info" onClick={this.toggle}>

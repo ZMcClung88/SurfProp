@@ -4,7 +4,6 @@ import Video from '../media/Gopro_ First Person Surfing.mp4';
 import Map from '../components/Map';
 import { FaChevronDown } from 'react-icons/fa';
 import OnImagesLoaded from 'react-on-images-loaded';
-// import Spinner from 'react-spinkit';
 import { BeatLoader } from 'react-spinners';
 import Spinner from 'react-spinner-material';
 
@@ -19,8 +18,6 @@ import NickImg from '../media/nick-baker-98364-unsplash.jpg';
 import OstapImg from '../media/ostap-senyuk-136511-unsplash.jpg';
 import TimCookImg from '../media/tim-cook-97924-unsplash.jpg';
 import TimMImg from '../media/tim-marshall-666366-unsplash.jpg';
-// import { Player, ControlBar } from 'video-react';
-// import Col from 'react-bootstrap/lib/Col';
 import {
   Button,
   Card,
@@ -97,17 +94,6 @@ class HomeView extends Component {
                   <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
                     <NavLink href="#">BLOG</NavLink>
                   </NavItem>
-                  {/* <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
-                      Options
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Option 1</DropdownItem>
-                      <DropdownItem>Option 2</DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>Reset</DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown> */}
                 </Nav>
               </Collapse>
             </Navbar>
@@ -175,7 +161,7 @@ class HomeView extends Component {
                       src={AbigailImg}
                       alt="Card image cap"
                     />
-                    {/* <CardBody style={{ height: '350px' }}> */}
+
                     <CardText
                       style={{
                         fontSize: '22px',
@@ -207,7 +193,6 @@ class HomeView extends Component {
                     >
                       Explore Spots
                     </Button>
-                    {/* </CardBody> */}
                   </Card>
                 </Col>
               </Row>
@@ -220,21 +205,11 @@ class HomeView extends Component {
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
                     <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                       <CardImg top width="auto" height="100%" src={AbigailImg} alt="Card image cap" />
-                      {/* <CardBody style={{ marginTop: '-15%' }}>
-                        <CardText>
-                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                        </CardText>
-                      </CardBody> */}
                     </Card>
                   </Col>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
                     <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                       <CardImg top width="auto" height="100%" src={NickImg} alt="Card image cap" />
-                      {/* <CardBody style={{ marginTop: '-15%' }}>
-                        <CardText>
-                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                        </CardText>
-                      </CardBody> */}
                     </Card>
                   </Col>
                 </Row>
@@ -242,21 +217,11 @@ class HomeView extends Component {
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
                     <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                       <CardImg top width="auto" height="100%" src={OstapImg} alt="Card image cap" />
-                      {/* <CardBody style={{ marginTop: '-15%' }}>
-                        <CardText>
-                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                        </CardText>
-                      </CardBody> */}
                     </Card>
                   </Col>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
                     <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                       <CardImg top width="auto" height="100%" src={TimCookImg} alt="Card image cap" />
-                      {/* <CardBody style={{ marginTop: '-15%' }}>
-                        <CardText>
-                          <p style={{ fontSize: '10px', marginBottom: '5%' }}>location</p>
-                        </CardText>
-                      </CardBody> */}
                     </Card>
                   </Col>
                 </Row>
@@ -301,7 +266,6 @@ class HomeView extends Component {
                     >
                       Find Out More
                     </Button>
-                    {/* </CardBody> */}
                   </Card>
                 </Col>
               </Row>
@@ -310,7 +274,6 @@ class HomeView extends Component {
         </div>
 
         <div style={!this.state.loaded ? visibleStyle : hiddenStyle}>
-          {/* <Spinner /> */}
           <div
             style={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
