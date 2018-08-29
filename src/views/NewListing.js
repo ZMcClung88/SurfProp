@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
+import config from '../config';
 import { Button, FormGroup, Checkbox } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaCamera } from 'react-icons/fa';
@@ -61,7 +63,12 @@ class NewListing extends Component {
   };
 
   onButtonClick = () => {
-    console.log('button working');
+    // console.log('button working');
+    const { currentUser } = firebase.auth();
+    const uid = currentUser.uid;
+    console.log('user', uid);
+    const ref = firebase.database().ref(`properties/${uid}`);
+    ref.push({ title: 'la cost rica', price: 3000000, location: 'Costa Rica' });
   };
 
   render() {
