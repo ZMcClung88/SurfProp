@@ -14,6 +14,7 @@ import {
   Col,
   Collapse,
   Container,
+  Input,
   Modal,
   ModalHeader,
   ModalBody,
@@ -63,12 +64,12 @@ class NewListing extends Component {
   };
 
   onButtonClick = () => {
-    // console.log('button working');
-    const { currentUser } = firebase.auth();
-    const uid = currentUser.uid;
-    console.log('user', uid);
-    const ref = firebase.database().ref(`properties/${uid}`);
-    ref.push({ title: 'la cost rica', price: 3000000, location: 'Costa Rica' });
+    console.log('state', this.state);
+    // const { currentUser } = firebase.auth();
+    // const uid = currentUser.uid;
+    // console.log('user', uid);
+    // const ref = firebase.database().ref(`properties/${uid}`);
+    // ref.push({ title: 'la cost rica', price: 3000000, location: 'Costa Rica' });
   };
 
   render() {
@@ -109,7 +110,8 @@ class NewListing extends Component {
           <Row>
             <Col>
               <form style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
-                <input
+                <Input
+                  onChange={event => this.setState({ name: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -122,7 +124,8 @@ class NewListing extends Component {
                   type="text"
                   placeholder="Name"
                 />
-                <input
+                <Input
+                  onChange={event => this.setState({ price: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -135,7 +138,8 @@ class NewListing extends Component {
                   type="text"
                   placeholder="Price"
                 />
-                <input
+                <Input
+                  onChange={event => this.setState({ address: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -148,7 +152,8 @@ class NewListing extends Component {
                   type="text"
                   placeholder="Address"
                 />
-                <input
+                <Input
+                  onChange={event => this.setState({ type: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -161,7 +166,8 @@ class NewListing extends Component {
                   type="text"
                   placeholder="Type"
                 />
-                <input
+                <Input
+                  onChange={event => this.setState({ bed: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -174,7 +180,8 @@ class NewListing extends Component {
                   type="text"
                   placeholder="Bed"
                 />
-                <input
+                <Input
+                  onChange={event => this.setState({ bath: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -188,7 +195,9 @@ class NewListing extends Component {
                   placeholder="Bath"
                 />
 
-                <textarea
+                <Input
+                  onChange={event => this.setState({ description: event.target.value })}
+                  type="textarea"
                   style={{
                     width: '80vw',
                     height: '30vh',
@@ -228,8 +237,8 @@ class NewListing extends Component {
               </div>
             </Col>
           </Row>
-          <Row style={{ marginBottom: '5%' }}>
-            <Col>
+          {/* <Row style={{ marginBottom: '5%' }}> */}
+          {/* <Col>
               <h6>Living area</h6>
               <div style={{ display: 'flex' }}>
                 <div
@@ -272,9 +281,9 @@ class NewListing extends Component {
                   <FaCamera size="2em" />
                 </div>
               </div>
-            </Col>
-          </Row>
-          <Row style={{ marginBottom: '5%', display: 'flex', flexDirection: 'row' }}>
+            </Col> */}
+          {/* </Row> */}
+          {/* <Row style={{ marginBottom: '5%', display: 'flex', flexDirection: 'row' }}>
             <Col>
               <h6>Beds</h6>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -307,9 +316,9 @@ class NewListing extends Component {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
 
-          <Row style={{ marginBottom: '5%', display: 'flex', flexDirection: 'row' }}>
+          {/* <Row style={{ marginBottom: '5%', display: 'flex', flexDirection: 'row' }}>
             <Col>
               <h6>Baths</h6>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -328,7 +337,7 @@ class NewListing extends Component {
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
 
         <Container style={{ marginLeft: '5%', marginTop: '15%' }}>
