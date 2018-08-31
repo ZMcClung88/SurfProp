@@ -47,7 +47,21 @@ class NewListing extends Component {
       bath: 0,
       description: '',
       pics: [],
-      features: []
+      balcony: false,
+      pool: false,
+      tv: false,
+      microwave: false,
+      poolTabel: false,
+      wifi: false,
+      parking: false,
+      beachAccess: false,
+      gym: false,
+      selfCheckIn: false,
+      washer: false,
+      dryer: false,
+      coffeeMaker: false,
+      dishwasher: false,
+      linens: false
     };
   }
 
@@ -222,6 +236,19 @@ class NewListing extends Component {
           <Row style={{ marginBottom: '5%' }}>
             <Col>
               <h6>Main</h6>
+              <Input
+                type="file"
+                onChange={event => console.log('file', event.target.files[0])}
+                style={{
+                  height: '75px',
+                  width: '75px',
+                  display: 'flex',
+                  border: '1px solid black',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginRight: '5%'
+                }}
+              />
               <div
                 style={{
                   height: '75px',
@@ -347,31 +374,124 @@ class NewListing extends Component {
           <Row>
             <Col>
               <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
-                <Checkbox inline> Balcony</Checkbox>
-                <Checkbox inline> Pool</Checkbox>
-                <Checkbox inline> TV</Checkbox>
-                <Checkbox inline> Microwave</Checkbox>
-                <Checkbox inline> Pool Table</Checkbox>
+                <Checkbox
+                  checked={this.state.balcony}
+                  onChange={() => this.setState({ balcony: !this.state.balcony })}
+                  inline
+                >
+                  {' '}
+                  Balcony
+                </Checkbox>
+
+                <Checkbox checked={this.state.pool} onChange={() => this.setState({ pool: !this.state.pool })} inline>
+                  {' '}
+                  Pool
+                </Checkbox>
+
+                <Checkbox checked={this.state.tv} onChange={() => this.setState({ tv: !this.state.tv })} inline>
+                  {' '}
+                  TV
+                </Checkbox>
+
+                <Checkbox
+                  checked={this.state.microwave}
+                  onChange={() => this.setState({ microwave: !this.state.microwave })}
+                  inline
+                >
+                  {' '}
+                  Microwave
+                </Checkbox>
+
+                <Checkbox
+                  checked={this.state.poolTabel}
+                  onChange={() => this.setState({ poolTabel: !this.state.poolTabel })}
+                  inline
+                >
+                  {' '}
+                  Pool Table
+                </Checkbox>
               </FormGroup>
             </Col>
             <Col>
               <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
-                <Checkbox inline> WiFi</Checkbox>
-                <Checkbox inline> Parking</Checkbox>
-                <Checkbox inline> Beach Access</Checkbox>
-                <Checkbox inline> Gym</Checkbox>
-                <Checkbox inline> Self check-in</Checkbox>
+                <Checkbox checked={this.state.wifi} onChange={() => this.setState({ wifi: !this.state.wifi })} inline>
+                  {' '}
+                  WiFi
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.parking}
+                  onChange={() => this.setState({ parking: !this.state.parking })}
+                  inline
+                >
+                  {' '}
+                  Parking
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.beachAccess}
+                  onChange={() => this.setState({ beachAccess: !this.state.beachAccess })}
+                  inline
+                >
+                  {' '}
+                  Beach Access
+                </Checkbox>
+                <Checkbox checked={this.state.gym} onChange={() => this.setState({ gym: !this.state.gym })} inline>
+                  {' '}
+                  Gym
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.selfCheckIn}
+                  onChange={() => this.setState({ selfCheckIn: !this.state.selfCheckIn })}
+                  inline
+                >
+                  {' '}
+                  Self check-in
+                </Checkbox>
               </FormGroup>
             </Col>
           </Row>
           <Row>
             <Col style={{ display: 'flex', justifyContent: 'center' }}>
               <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
-                <Checkbox inline> Washer</Checkbox>
-                <Checkbox inline> Dryer</Checkbox>
-                <Checkbox inline> Coffee Maker</Checkbox>
-                <Checkbox inline> Dishwasher</Checkbox>
-                <Checkbox inline> Linens</Checkbox>
+                <Checkbox
+                  checked={this.state.washer}
+                  onChange={() => this.setState({ washer: !this.state.washer })}
+                  inline
+                >
+                  {' '}
+                  Washer
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.dryer}
+                  onChange={() => this.setState({ dryer: !this.state.dryer })}
+                  inline
+                >
+                  {' '}
+                  Dryer
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.coffeeMaker}
+                  onChange={() => this.setState({ coffeeMaker: !this.state.coffeeMaker })}
+                  inline
+                >
+                  {' '}
+                  Coffee Maker
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.dishwasher}
+                  onChange={() => this.setState({ dishwasher: !this.state.dishwasher })}
+                  inline
+                >
+                  {' '}
+                  Dishwasher
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.linens}
+                  onChange={() => this.setState({ linens: !this.state.linens })}
+                  inline
+                >
+                  {' '}
+                  Linens
+                </Checkbox>
               </FormGroup>
             </Col>
           </Row>
