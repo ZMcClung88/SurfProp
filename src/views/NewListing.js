@@ -67,7 +67,6 @@ class NewListing extends Component {
 
   componentDidMount() {
     firebase.initializeApp(config);
-
     // firebase.auth().signInAnonymously();
   }
 
@@ -78,12 +77,18 @@ class NewListing extends Component {
   };
 
   onButtonClick = () => {
+    // console.log('state', this.state);
+    const { currentUser } = firebase.auth();
+    const uid = currentUser.uid;
+    console.log('user', uid);
+    const ref = firebase.database().ref(`properties/${uid}`);
+    ref.push(this.state);
+  };
+
+  addFile = event => {
+    // console.log('event', event.target.files[0].name);
+    this.setState({ pics: [...this.state.pics, event.target.files[0].name] });
     console.log('state', this.state);
-    // const { currentUser } = firebase.auth();
-    // const uid = currentUser.uid;
-    // console.log('user', uid);
-    // const ref = firebase.database().ref(`properties/${uid}`);
-    // ref.push({ title: 'la cost rica', price: 3000000, location: 'Costa Rica' });
   };
 
   render() {
@@ -236,20 +241,9 @@ class NewListing extends Component {
           <Row style={{ marginBottom: '5%' }}>
             <Col>
               <h6>Main</h6>
-              <Input
-                type="file"
-                onChange={event => console.log('file', event.target.files[0])}
-                style={{
-                  height: '75px',
-                  width: '75px',
-                  display: 'flex',
-                  border: '1px solid black',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginRight: '5%'
-                }}
-              />
-              <div
+              <Input type="file" onChange={this.addFile} />
+              <Button onClick={() => console.log('STATE AGAIN', this.state)}>STATE</Button>
+              {/* <div
                 style={{
                   height: '75px',
                   width: '75px',
@@ -261,7 +255,7 @@ class NewListing extends Component {
                 }}
               >
                 <FaCamera size="2em" />
-              </div>
+              </div> */}
             </Col>
           </Row>
           {/* <Row style={{ marginBottom: '5%' }}> */}
