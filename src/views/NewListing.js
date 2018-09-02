@@ -408,7 +408,7 @@ class NewListing extends Component {
             </Col>
             <Col>
               <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
-                <Checkbox checked={this.state.wifi} onChange={() => this.setState({ wifi: !this.state.wifi })} inline>
+                <Checkbox value="wifi" onChange={event => console.log('wifi', event.target.checked)} inline>
                   {' '}
                   WiFi
                 </Checkbox>
