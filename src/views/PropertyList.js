@@ -28,6 +28,8 @@ import {
 } from 'reactstrap';
 import Dropdown from '../components/Dropdown';
 
+import { propertyFetch } from '../actions';
+
 class PropertyList extends Component {
   constructor(props) {
     super(props);
@@ -46,17 +48,17 @@ class PropertyList extends Component {
   };
 
   componentDidMount = () => {
-    const { Pb } = firebase.auth();
-    const { O } = Pb;
-    console.log('check check', Pb);
-    console.log('check2 check2', { O });
-    firebase
-      .database()
-      .ref(`properties`)
-      .on('value', snapshot => {
-        this.setState({ properties: [...this.state.properties, snapshot.val()] });
-        console.log('snapshot state', this.state);
-      });
+    this.props.propertyFetch();
+    // const currentUser = firebase.auth();
+    // console.log('please work', currentUser);
+    //
+    // firebase
+    //   .database()
+    //   .ref(`properties`)
+    //   .on('value', snapshot => {
+    //     this.setState({ properties: [...this.state.properties, snapshot.val()] });
+    //     console.log('snapshot state', this.state);
+    //   });
   };
 
   toggle = () => {
@@ -287,4 +289,11 @@ const styles = {
   }
 };
 
-export default PropertyList;
+const mapStateToProps = state => {
+  console.log('state here', state);
+  const properties = state.properties;
+
+  return properties;
+};
+
+export default connect(mapStateToProps, { propertyFetch })(PropertyList);
