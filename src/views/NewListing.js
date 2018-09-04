@@ -66,7 +66,6 @@ class NewListing extends Component {
   }
 
   componentDidMount() {
-    firebase.initializeApp(config);
     // firebase.auth().signInAnonymously();
   }
 
@@ -130,7 +129,7 @@ class NewListing extends Component {
             <Col>
               <form style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 <Input
-                  onChange={event => this.setState({ name: event.target.value })}
+                  onChange={event => this.setState({ title: event.target.value })}
                   style={{
                     width: '80vw',
                     height: '36px',
@@ -141,7 +140,21 @@ class NewListing extends Component {
                     outlineColor: 'lightblue'
                   }}
                   type="text"
-                  placeholder="Name"
+                  placeholder="Title"
+                />
+                <Input
+                  onChange={event => this.setState({ tagline: event.target.value })}
+                  style={{
+                    width: '80vw',
+                    height: '36px',
+                    paddingLeft: '20px',
+                    marginTop: '5%',
+                    border: '1px solid grey',
+                    borderRadius: '3%',
+                    outlineColor: 'lightblue'
+                  }}
+                  type="text"
+                  placeholder="Tagline"
                 />
                 <Input
                   onChange={event => this.setState({ price: event.target.value })}
@@ -244,121 +257,121 @@ class NewListing extends Component {
               <Input type="file" onChange={this.addFile} />
               <Button onClick={() => console.log('STATE AGAIN', this.state)}>STATE</Button>
               {/* <div
-                style={{
-                  height: '75px',
-                  width: '75px',
-                  display: 'flex',
-                  border: '1px solid black',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginRight: '5%'
-                }}
-              >
-                <FaCamera size="2em" />
-              </div> */}
+                  style={{
+                    height: '75px',
+                    width: '75px',
+                    display: 'flex',
+                    border: '1px solid black',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginRight: '5%'
+                  }}
+                >
+                  <FaCamera size="2em" />
+                </div> */}
             </Col>
           </Row>
           {/* <Row style={{ marginBottom: '5%' }}> */}
           {/* <Col>
-              <h6>Living area</h6>
-              <div style={{ display: 'flex' }}>
-                <div
-                  style={{
-                    height: '75px',
-                    width: '75px',
-                    display: 'flex',
-                    border: '1px solid black',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginRight: '5%'
-                  }}
-                >
-                  <FaCamera size="2em" />
+                <h6>Living area</h6>
+                <div style={{ display: 'flex' }}>
+                  <div
+                    style={{
+                      height: '75px',
+                      width: '75px',
+                      display: 'flex',
+                      border: '1px solid black',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '5%'
+                    }}
+                  >
+                    <FaCamera size="2em" />
+                  </div>
+                  <div
+                    style={{
+                      height: '75px',
+                      width: '75px',
+                      display: 'flex',
+                      border: '1px solid black',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '5%'
+                    }}
+                  >
+                    <FaCamera size="2em" />
+                  </div>
+                  <div
+                    style={{
+                      height: '75px',
+                      width: '75px',
+                      display: 'flex',
+                      border: '1px solid black',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '5%'
+                    }}
+                  >
+                    <FaCamera size="2em" />
+                  </div>
                 </div>
-                <div
-                  style={{
-                    height: '75px',
-                    width: '75px',
-                    display: 'flex',
-                    border: '1px solid black',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginRight: '5%'
-                  }}
-                >
-                  <FaCamera size="2em" />
-                </div>
-                <div
-                  style={{
-                    height: '75px',
-                    width: '75px',
-                    display: 'flex',
-                    border: '1px solid black',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginRight: '5%'
-                  }}
-                >
-                  <FaCamera size="2em" />
-                </div>
-              </div>
-            </Col> */}
+              </Col> */}
           {/* </Row> */}
           {/* <Row style={{ marginBottom: '5%', display: 'flex', flexDirection: 'row' }}>
-            <Col>
-              <h6>Beds</h6>
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div
-                  style={{
-                    height: '75px',
-                    width: '75px',
-                    display: 'flex',
-                    border: '1px solid black',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginRight: '5%'
-                  }}
-                >
-                  <FaCamera size="2em" />
-                </div>
+              <Col>
+                <h6>Beds</h6>
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                  <div
+                    style={{
+                      height: '75px',
+                      width: '75px',
+                      display: 'flex',
+                      border: '1px solid black',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '5%'
+                    }}
+                  >
+                    <FaCamera size="2em" />
+                  </div>
 
-                <div
-                  style={{
-                    height: '75px',
-                    width: '75px',
-                    display: 'flex',
-                    border: '1px solid black',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginRight: '5%'
-                  }}
-                >
-                  <FaCamera size="2em" />
+                  <div
+                    style={{
+                      height: '75px',
+                      width: '75px',
+                      display: 'flex',
+                      border: '1px solid black',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '5%'
+                    }}
+                  >
+                    <FaCamera size="2em" />
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row> */}
+              </Col>
+            </Row> */}
 
           {/* <Row style={{ marginBottom: '5%', display: 'flex', flexDirection: 'row' }}>
-            <Col>
-              <h6>Baths</h6>
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <div
-                  style={{
-                    height: '75px',
-                    width: '75px',
-                    display: 'flex',
-                    border: '1px solid black',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    marginRight: '5%'
-                  }}
-                >
-                  <FaCamera size="2em" />
+              <Col>
+                <h6>Baths</h6>
+                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                  <div
+                    style={{
+                      height: '75px',
+                      width: '75px',
+                      display: 'flex',
+                      border: '1px solid black',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginRight: '5%'
+                    }}
+                  >
+                    <FaCamera size="2em" />
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row> */}
+              </Col>
+            </Row> */}
         </Container>
 
         <Container style={{ marginLeft: '5%', marginTop: '15%' }}>
@@ -406,44 +419,6 @@ class NewListing extends Component {
                 </Checkbox>
               </FormGroup>
             </Col>
-            <Col>
-              <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
-                <Checkbox value="wifi" onChange={event => console.log('wifi', event.target.checked)} inline>
-                  {' '}
-                  WiFi
-                </Checkbox>
-                <Checkbox
-                  checked={this.state.parking}
-                  onChange={() => this.setState({ parking: !this.state.parking })}
-                  inline
-                >
-                  {' '}
-                  Parking
-                </Checkbox>
-                <Checkbox
-                  checked={this.state.beachAccess}
-                  onChange={() => this.setState({ beachAccess: !this.state.beachAccess })}
-                  inline
-                >
-                  {' '}
-                  Beach Access
-                </Checkbox>
-                <Checkbox checked={this.state.gym} onChange={() => this.setState({ gym: !this.state.gym })} inline>
-                  {' '}
-                  Gym
-                </Checkbox>
-                <Checkbox
-                  checked={this.state.selfCheckIn}
-                  onChange={() => this.setState({ selfCheckIn: !this.state.selfCheckIn })}
-                  inline
-                >
-                  {' '}
-                  Self check-in
-                </Checkbox>
-              </FormGroup>
-            </Col>
-          </Row>
-          <Row>
             <Col style={{ display: 'flex', justifyContent: 'center' }}>
               <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
                 <Checkbox
@@ -488,7 +463,44 @@ class NewListing extends Component {
                 </Checkbox>
               </FormGroup>
             </Col>
+            <Col>
+              <FormGroup style={{ display: 'flex', flexDirection: 'column' }}>
+                <Checkbox value="wifi" onChange={event => console.log('wifi', event.target.checked)} inline>
+                  {' '}
+                  WiFi
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.parking}
+                  onChange={() => this.setState({ parking: !this.state.parking })}
+                  inline
+                >
+                  {' '}
+                  Parking
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.beachAccess}
+                  onChange={() => this.setState({ beachAccess: !this.state.beachAccess })}
+                  inline
+                >
+                  {' '}
+                  Beach Access
+                </Checkbox>
+                <Checkbox checked={this.state.gym} onChange={() => this.setState({ gym: !this.state.gym })} inline>
+                  {' '}
+                  Gym
+                </Checkbox>
+                <Checkbox
+                  checked={this.state.selfCheckIn}
+                  onChange={() => this.setState({ selfCheckIn: !this.state.selfCheckIn })}
+                  inline
+                >
+                  {' '}
+                  Self check-in
+                </Checkbox>
+              </FormGroup>
+            </Col>
           </Row>
+          <Row />
         </Container>
 
         <Container style={{ marginTop: '15%', marginBottom: '15%' }}>

@@ -1,5 +1,9 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import firebase from 'firebase';
+import config from '../config';
 import Map from '../components/Map';
 import {
   Button,
@@ -32,9 +36,29 @@ class PropertyList extends Component {
       isOpen: false,
       dropdownOpen: false,
       picView: true,
-      toggleView: true
+      toggleView: true,
+      properties: []
     };
   }
+
+  componentWillMount = () => {
+    firebase.initializeApp(config);
+  };
+
+  componentDidMount = () => {
+    const { Pb } = firebase.auth();
+    const { O } = Pb;
+    console.log('check check', Pb);
+    console.log('check2 check2', { O });
+    firebase
+      .database()
+      .ref(`properties`)
+      .on('value', snapshot => {
+        this.setState({ properties: [...this.state.properties, snapshot.val()] });
+        console.log('snapshot state', this.state);
+      });
+  };
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -121,6 +145,7 @@ class PropertyList extends Component {
           <Container>
             <Button>linear</Button>
             <Button onClick={this.toggleView}>grid</Button>
+            {/* <h1>{this.state.properties}</h1> */}
           </Container>
 
           {this.state.toggleView ? (

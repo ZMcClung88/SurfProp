@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import promise from 'redux-promise';
 // import firebase from 'firebase';
 // import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import Spinner from 'react-spinkit';
@@ -14,7 +12,6 @@ import LoginView from './views/LoginView';
 import AdminPropertyView from './views/AdminPropertyView';
 import Blog from './views/BlogView';
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 import './App.css';
 import SocialLinks from './components/SocialLinks';
 import SubscribeButton from './components/SubscribeButton';
