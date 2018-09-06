@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button, Card, CardBody, CardText, Input } from 'reactstrap';
 import firebase from 'firebase';
 import config from '../config';
 import Spinner from 'react-spinkit';
 import { BrowserRouter as Router, Redirect, Link, Route, Switch, withRouter } from 'react-router-dom';
+import { loginSuccess } from '../actions';
 
 import HomeView from './HomeView';
 
@@ -19,42 +21,42 @@ class LoginView extends Component {
       redirect: false
     };
   }
+  componentWillMount = () => {
+    localStorage.setItem('myCat', 'Tom');
+  };
   componentDidMount = () => {
     firebase.initializeApp(config);
+    console.log('item', localStorage.getItem('myCat'));
   };
 
   onButtonClick = () => {
-    const { email, password, error } = this.state;
+    // console.log('click click', this.props);
+    let email = 'z@z.com';
+    let password = 'password';
 
-    this.setState({ error: '', loading: true });
-
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(this.onLoginSuccess)
-      .catch(() => {
-        firebase
-          .auth()
-          .createUserWithEmailAndPassword(email, password)
-          .then(this.onLoginSuccess.bind(this))
-          .catch(this.onLoginFail.bind(this));
-      });
+    localStorage.setItem('user', firebase.auth());
+    this.props.loginSuccess({ email, password });
   };
 
-  onLoginFail() {
-    this.setState({ error: 'Authentication Failed', loading: false });
-  }
-
-  onLoginSuccess = () => {
-    this.setState({
-      email: '',
-      password: '',
-      loading: false,
-      error: '',
-      redirect: true
-    });
-    this.props.history.push('/admin/NewListing');
+  getUserInfo = () => {
+    console.log('user info');
+    console.log('user', localStorage.getItem('user'));
   };
+
+  // onLoginFail() {
+  //   this.setState({ error: 'Authentication Failed', loading: false });
+  // }
+  //
+  // onLoginSuccess = () => {
+  //   this.setState({
+  //     email: '',
+  //     password: '',
+  //     loading: false,
+  //     error: '',
+  //     redirect: true
+  //   });
+  //   this.props.history.push('/admin/NewListing');
+  // };
 
   renderButton() {
     if (this.state.loading) {
@@ -89,6 +91,7 @@ class LoginView extends Component {
         <CardText style={styles.errorTextStyle}>{this.state.error}</CardText>
 
         <CardBody>{this.renderButton()}</CardBody>
+        <Button onClick={this.getUserInfo}>User?</Button>
       </Card>
     );
   }
@@ -102,4 +105,12 @@ const styles = {
   }
 };
 
-export default withRouter(LoginView);
+const mapStateToProps = state => {
+  const uid = state;
+  console.log('chirp chirp', uid);
+  return {
+    uid: state.uid
+  };
+};
+
+export default withRouter(connect(mapStateToProps, { loginSuccess })(LoginView));

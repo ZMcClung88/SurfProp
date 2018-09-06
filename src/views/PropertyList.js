@@ -80,6 +80,10 @@ class PropertyList extends Component {
     });
   };
 
+  getProperties = props => {
+    console.log('get properties', _.map(this.props, item => item));
+  };
+
   render() {
     return (
       <div>
@@ -276,6 +280,7 @@ class PropertyList extends Component {
               </Row>
             </Container>
           )}
+          <Button onClick={this.getProperties}>properties</Button>
         </Container>
       </div>
     );
@@ -290,8 +295,8 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  console.log('state here', state);
-  const properties = state.properties;
+  const properties = state;
+  // console.log('state here', properties);
 
   return properties;
 };
