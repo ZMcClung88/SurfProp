@@ -14,7 +14,8 @@ class SimpleMap extends Component {
       lat: 39.768403,
       lng: -86.158068
     },
-    zoom: 11
+    zoom: 11,
+    mapTypeControl: true
   };
 
   componentDidMount = options => {

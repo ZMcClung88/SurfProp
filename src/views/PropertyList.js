@@ -81,6 +81,8 @@ class PropertyList extends Component {
   };
 
   getProperties = props => {
+    const { address } = this.props;
+    console.log('addy', this.props);
     console.log('get properties', _.map(this.props, item => item));
   };
 

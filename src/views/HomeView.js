@@ -6,6 +6,7 @@ import { FaChevronDown } from 'react-icons/fa';
 import OnImagesLoaded from 'react-on-images-loaded';
 import { BeatLoader } from 'react-spinners';
 import Spinner from 'react-spinner-material';
+import singleProperty from './SingleProperty';
 
 import BettyImg from '../media/bette-jane-camp-712007-unsplash.jpg';
 import BrianImg from '../media/brian-babb-256298-unsplash.jpg';
@@ -24,6 +25,7 @@ import {
   CardBody,
   CardGroup,
   CardImg,
+  CardLink,
   CardText,
   Collapse,
   Col,
@@ -122,7 +124,7 @@ class HomeView extends Component {
             <Container
               className="d-none d-sm-block"
               style={{
-                marginTop: '5%',
+                marginTop: '15%',
                 display: 'flex',
                 justifyContent: 'center',
                 width: '100vw'
@@ -205,6 +207,7 @@ class HomeView extends Component {
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
                     <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
                       <CardImg top width="auto" height="100%" src={AbigailImg} alt="Card image cap" />
+                      <CardLink href={`${singleProperty}`} />
                     </Card>
                   </Col>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
@@ -231,10 +234,25 @@ class HomeView extends Component {
               </div>
             </Container>
 
-            <Container style={{ marginTop: '15%', marginBottom: '15%' }}>
+            <Container
+              style={{
+                marginTop: '15%',
+                marginBottom: '15%',
+
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
               <Row>
                 <Col>
-                  <Card style={{ position: 'relative', height: '350px' }}>
+                  <Card
+                    style={{
+                      position: 'relative',
+                      height: '350px',
+                      maxWidth: '400px',
+                      borderRadius: '5px'
+                    }}
+                  >
                     {/* <CardBody className="d-flex flex-column" style={{ height: '350px' }}> */}
                     <CardImg style={{ opacity: '0.8' }} width="auto" height="100%" src={EpicImg} alt="Card image cap" />
                     <CardText

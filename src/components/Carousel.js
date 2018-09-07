@@ -9,29 +9,19 @@ import JoleneImg from '../media/jolene-hardy-18952-unsplash.jpg';
 
 const items = [
   {
-    src: `${BernardImg}`,
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    src: `${BernardImg}`
   },
   {
-    src: `${ArminImg}`,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    src: `${ArminImg}`
   },
   {
-    src: `${JasonImg}`,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    src: `${JasonImg}`
   },
   {
-    src: `${DerekImg}`,
-    altText: 'Slide 4',
-    caption: 'Slide 4'
+    src: `${DerekImg}`
   },
   {
-    src: `${JoleneImg}`,
-    altText: 'Slide 5',
-    caption: 'Slide 5'
+    src: `${JoleneImg}`
   }
 ];
 
