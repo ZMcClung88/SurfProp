@@ -29,6 +29,7 @@ import {
 import Dropdown from '../components/Dropdown';
 
 import { propertyFetch } from '../actions';
+import BeachHouse1 from '../media/arno-smit-141735-unsplash.jpg';
 
 class PropertyList extends Component {
   constructor(props) {
@@ -160,13 +161,7 @@ class PropertyList extends Component {
             <Container id="linear">
               <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={BeachHouse1} alt="Card image cap" />
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
