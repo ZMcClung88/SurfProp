@@ -5,6 +5,20 @@ body {
   height: 100%;
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+/* ::-webkit-scrollbar-thumb {
+  background: #ff;
+} */
+
 @media (min-width: 462px) {
   h1 {
     font-size: 10px;

@@ -11,6 +11,7 @@ import {
   CardBody,
   CardGroup,
   CardImg,
+  CardImgOverlay,
   CardText,
   CardTitle,
   Col,
@@ -30,6 +31,9 @@ import Dropdown from '../components/Dropdown';
 
 import { propertyFetch } from '../actions';
 import BeachHouse1 from '../media/arno-smit-141735-unsplash.jpg';
+import BeachHouse2 from '../media/niv-rozenberg-356666-unsplash.jpg';
+import BeachHouse3 from '../media/tim-cook-97924-unsplash.jpg';
+import BeachHouse4 from '../media/sterling-davis-513094-unsplash.jpg';
 
 class PropertyList extends Component {
   constructor(props) {
@@ -95,18 +99,18 @@ class PropertyList extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem className="ml-auto">
+              <NavItem>
                 <NavLink tag={Link} to="/properties">
                   BUY
                 </NavLink>
               </NavItem>
-              <NavItem className="ml-auto">
+              <NavItem>
                 <NavLink href="#">SELL</NavLink>
               </NavItem>
-              <NavItem className="ml-auto">
+              <NavItem>
                 <NavLink href="#">RENT</NavLink>
               </NavItem>
-              <NavItem className="ml-auto">
+              <NavItem>
                 <NavLink href="#">BLOG</NavLink>
               </NavItem>
             </Nav>
@@ -123,7 +127,7 @@ class PropertyList extends Component {
           </Row>
         </Container>
 
-        <Container
+        {/* <Container
           style={{
             height: '100px',
             width: '100%',
@@ -140,10 +144,10 @@ class PropertyList extends Component {
             <Dropdown title="MIN PRICE" />
             <Dropdown title="MAX PRICE" />
           </Row>
-        </Container>
+        </Container> */}
 
         <Container>
-          <Row style={{ marginTop: '15%' }}>
+          <Row style={{ marginTop: '15%', display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
             <h1 style={{ fontSize: '16px' }}>Intoducing Surf Propertiess</h1>
             <p style={{ fontSize: '11px' }}>
               Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
@@ -151,50 +155,67 @@ class PropertyList extends Component {
             </p>
           </Row>
 
-          <Container>
+          {/* <Container>
             <Button>linear</Button>
             <Button onClick={this.toggleView}>grid</Button>
-            {/* <h1>{this.state.properties}</h1> */}
-          </Container>
+            <h1>{this.state.properties}</h1>
+          </Container> */}
 
           {this.state.toggleView ? (
             <Container id="linear">
               <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
                   <CardImg top width="auto" height="100%" src={BeachHouse1} alt="Card image cap" />
+                  <CardImgOverlay style={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardText
+                      style={{
+                        color: '#fff',
+                        fontSize: '24',
+                        fontWeight: 'bolder',
+                        display: 'flex',
+                        justifyContent: 'flex-end'
+                      }}
+                    >
+                      Playa Del Sol
+                    </CardText>
+                    <CardText
+                      style={{
+                        color: '#fff',
+                        fontSize: '18',
+                        fontWeight: 'bolder',
+                        display: 'flex',
+                        justifyContent: 'flex-end'
+                      }}
+                    >
+                      Beach Retreat
+                    </CardText>
+                    <CardText
+                      style={{
+                        color: '#fff',
+                        fontSize: '18',
+                        fontWeight: 'bolder',
+                        display: 'flex',
+                        justifyContent: 'flex-end'
+                      }}
+                    >
+                      <small>$700/week</small>
+                    </CardText>
+                  </CardImgOverlay>
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={BeachHouse2} alt="Card image cap" />
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={BeachHouse3} alt="Card image cap" />
                 </Card>
               </Row>
               <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
+                  <CardImg top width="auto" height="100%" src={BeachHouse4} alt="Card image cap" />
                 </Card>
               </Row>
             </Container>
@@ -277,7 +298,7 @@ class PropertyList extends Component {
               </Row>
             </Container>
           )}
-          <Button onClick={this.getProperties}>properties</Button>
+          {/* <Button onClick={this.getProperties}>properties</Button> */}
         </Container>
       </div>
     );
