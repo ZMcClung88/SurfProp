@@ -60,7 +60,7 @@ class SingleProperty extends Component {
     return (
       <div style={{ height: '50vh', width: '100vw' }}>
         <Navbar fixed="top" color="light" light expand="md">
-          <NavbarBrand href="/">surfProp</NavbarBrand>
+          <NavbarBrand href="/">Surf Property</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -131,17 +131,12 @@ class SingleProperty extends Component {
         <Container style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
           <Row style={{ width: '90%', flexDirection: 'column', marginLeft: '5%' }}>
             <h1>Features</h1>
-            <ul>
+            <ul style={{ listStyle: 'none' }}>
               <li>WiFi</li>
               <li>Hotub</li>
               <li>Kitchen</li>
               <li>Beach Access</li>
               <li>Pet Friendly</li>
-            </ul>
-          </Row>
-          <Row style={{ width: '90%', flexDirection: 'column', marginLeft: '5%' }}>
-            <h1>Ammenities</h1>
-            <ul>
               <li>Bar</li>
               <li>Pool Table</li>
               <li>Ping Pong Table</li>

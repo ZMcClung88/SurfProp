@@ -19,6 +19,11 @@ import NickImg from '../media/nick-baker-98364-unsplash.jpg';
 import OstapImg from '../media/ostap-senyuk-136511-unsplash.jpg';
 import TimCookImg from '../media/tim-cook-97924-unsplash.jpg';
 import TimMImg from '../media/tim-marshall-666366-unsplash.jpg';
+import CostaRicaImg from '../media/costa_rica.jpeg';
+import HawaiiImg from '../media/download.jpeg';
+import AustraliaImg from '../media/australia.jpeg';
+import SouthAfricaImg from '../media/south_africa.jpeg';
+
 import {
   Button,
   Card,
@@ -65,6 +70,10 @@ class HomeView extends Component {
     this.props.history.push('/properties');
   };
 
+  singleProperty = () => {
+    this.props.history.push('/singleProperty');
+  };
+
   render() {
     const hiddenStyle = { display: 'none' };
     const visibleStyle = {};
@@ -78,22 +87,22 @@ class HomeView extends Component {
             timeout={7000}
           >
             <Navbar style={this.state.loaded ? visibleStyle : hiddenStyle} fixed="top" color="light" light expand="lg">
-              <NavbarBrand href="/">surfProp</NavbarBrand>
+              <NavbarBrand href="/">SURFPROPERTY</NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
-                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
+                  <NavItem>
                     <NavLink tag={Link} to="/properties">
                       BUY
                     </NavLink>
                   </NavItem>
-                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
+                  <NavItem>
                     <NavLink href="#">SELL</NavLink>
                   </NavItem>
-                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
+                  <NavItem>
                     <NavLink href="#">RENT</NavLink>
                   </NavItem>
-                  <NavItem style={{ display: 'flex', justifyContent: 'center' }}>
+                  <NavItem>
                     <NavLink href="#">BLOG</NavLink>
                   </NavItem>
                 </Nav>
@@ -134,19 +143,49 @@ class HomeView extends Component {
             </Container>
 
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>
-              <div style={{ overflow: 'auto' }}>
-                <h6>Find the best surf spots!</h6>
-                <Row style={{ overflowY: 'scroll', flexWrap: 'nowrap' }}>
-                  <Col>
-                    <MenuCards onClick={this.onBuyClick} src={ArnoImg} title="Buy" />
-                  </Col>
-                  <Col>
-                    <MenuCards onClick={this.onSellClick} src={BrianImg} isSelected title="Sell" />
-                  </Col>
-                  <Col>
-                    <MenuCards onClick={this.onRentClick} src={NivImg} title="Rent" />
-                  </Col>
-                </Row>
+              <div>
+                <h5 style={{ color: '#c52031', textAlign: 'center', textStyle: 'Montserrat' }}>CHOOSE A CATEGORY</h5>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    width: '100%',
+                    color: 'white'
+                  }}
+                >
+                  <MenuCards
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      height: '200px',
+                      width: '100%'
+                    }}
+                    onClick={this.onBuyClick}
+                    src={ArnoImg}
+                    title="Buy"
+                  />
+
+                  <MenuCards
+                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    height={'200px'}
+                    width={'100'}
+                    onClick={this.onSellClick}
+                    src={BrianImg}
+                    isSelected
+                    title="Sell"
+                  />
+
+                  <MenuCards
+                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    height={'200px'}
+                    width={'100'}
+                    onClick={this.onRentClick}
+                    src={NivImg}
+                    title="Rent"
+                  />
+                </div>
               </div>
             </Container>
 
@@ -205,32 +244,41 @@ class HomeView extends Component {
               <Container>
                 <Row>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                      <CardImg top width="auto" height="100%" src={AbigailImg} alt="Card image cap" />
-                      <CardLink href={`${singleProperty}`} />
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
+                      <CardImg top width="auto" height="100%" src={CostaRicaImg} alt="Card image cap" />
+                      <CardText>Costa Rica</CardText>
+                      <CardLink onClick={this.singleProperty} />
                     </Card>
                   </Col>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                      <CardImg top width="auto" height="100%" src={NickImg} alt="Card image cap" />
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
+                      <CardImg top width="auto" height="100%" src={SouthAfricaImg} alt="Card image cap" />
+                      <CardText>South Africa</CardText>
+                      <CardLink onClick={this.singleProperty} />
                     </Card>
                   </Col>
                 </Row>
                 <Row style={{ display: 'flex', justifyContent: 'center' }}>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                      <CardImg top width="auto" height="100%" src={OstapImg} alt="Card image cap" />
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
+                      <CardImg top width="auto" height="100%" src={AustraliaImg} alt="Card image cap" />
+                      <CardText>Australia</CardText>
+                      <CardLink onClick={this.singleProperty} />
                     </Card>
                   </Col>
                   <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '80%' }}>
-                      <CardImg top width="auto" height="100%" src={TimCookImg} alt="Card image cap" />
+                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
+                      <CardImg top width="auto" height="100%" src={HawaiiImg} alt="Card image cap" />
+                      <CardText>Hawaii</CardText>
+                      <CardLink onClick={this.singleProperty} />
                     </Card>
                   </Col>
                 </Row>
               </Container>
               <div style={{ width: '100%', textAlign: 'center', marginBottom: '5%' }}>
-                <Button style={{ width: '50%' }}>Show All</Button>
+                <Button onClick={this.onClick} style={{ width: '50%' }}>
+                  Show All
+                </Button>
               </div>
             </Container>
 

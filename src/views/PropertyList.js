@@ -161,6 +161,8 @@ class PropertyList extends Component {
             <h1>{this.state.properties}</h1>
           </Container> */}
 
+          {this.getProperties()}
+
           {this.state.toggleView ? (
             <Container id="linear">
               <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
@@ -313,10 +315,7 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  const properties = state;
-  // console.log('state here', properties);
-
-  return properties;
+  return state;
 };
 
 export default connect(mapStateToProps, { propertyFetch })(PropertyList);

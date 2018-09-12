@@ -20,9 +20,9 @@ class MenuCards extends Component {
 
   render() {
     return (
-      <div>
-        <Card onClick={this.onBuyClick} style={{ width: '150px', height: '100px' }}>
-          <CardImg top width="auto" height="70%" src={this.props.src} alt="Card image cap" />
+      <div style={this.props.style}>
+        <Card onClick={this.onBuyClick} style={this.props.style}>
+          <CardImg top width="auto" src={this.props.src} alt="Card image cap" />
           <CardBody style={{ height: '30px', border: 'none' }}>
             <CardTitle style={{ textAlign: 'center', marginTop: '-15%' }}>{this.props.title}</CardTitle>
           </CardBody>
