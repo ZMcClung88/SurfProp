@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from 'firebase';
+import * as firebase from 'firebase';
 import config from '../config';
 import { Button, FormGroup, Checkbox } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -67,6 +67,7 @@ class NewListing extends Component {
 
   componentDidMount() {
     // firebase.auth().signInAnonymously();
+    // firebase.initializeApp();
   }
 
   toggle = () => {
@@ -76,12 +77,13 @@ class NewListing extends Component {
   };
 
   onButtonClick = () => {
-    // console.log('state', this.state);
+    console.log('state', this.state);
     const { currentUser } = firebase.auth();
-    const uid = currentUser.uid;
-    console.log('user', uid);
-    const ref = firebase.database().ref(`properties/${uid}`);
-    ref.push(this.state);
+    console.log('chech check', currentUser);
+    // const uid = currentUser.uid;
+    // console.log('user', uid);
+    // const ref = firebase.database().ref(`properties/property/${uid}`);
+    // ref.push(this.state);
   };
 
   addFile = event => {
