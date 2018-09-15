@@ -2,7 +2,6 @@ import firebase from 'firebase';
 import * as EmailValidator from 'email-validator';
 import React, { Component } from 'react';
 import { Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import config from '../config';
 
 class SubscribeButton extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class SubscribeButton extends Component {
   }
 
   componentDidMount() {
-    firebase.initializeApp(config);
+    // firebase.initializeApp(config);
 
     firebase.auth().signInAnonymously();
   }

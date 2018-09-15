@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Video from '../media/Gopro_ First Person Surfing.mp4';
 import Map from '../components/Map';
+import MapBoxMap from '../components/MapBoxMap';
 import { FaChevronDown } from 'react-icons/fa';
 import OnImagesLoaded from 'react-on-images-loaded';
 import { BeatLoader } from 'react-spinners';
@@ -140,6 +141,18 @@ class HomeView extends Component {
               }}
             >
               <Map height="90vh" width="90vw" />
+            </Container>
+
+            <Container
+              className="d-none d-sm-block"
+              style={{
+                marginTop: '15%',
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100vw'
+              }}
+            >
+              <MapBoxMap height="90vh" width="90vw" />
             </Container>
 
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>

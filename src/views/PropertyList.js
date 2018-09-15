@@ -49,7 +49,7 @@ class PropertyList extends Component {
   }
 
   componentWillMount = () => {
-    firebase.initializeApp(config);
+    // firebase.initializeApp(config);
   };
 
   componentDidMount = () => {
@@ -85,17 +85,17 @@ class PropertyList extends Component {
     });
   };
 
-  getProperties = props => {
-    const { address } = this.props;
-    console.log('addy', this.props);
-    console.log(
-      'get properties',
-      _.map(this.props, item => {
-        const { address } = item;
-        return address;
-      })
-    );
-  };
+  // getProperties = props => {
+  //   const { address } = this.props;
+  //   console.log('addy', this.props);
+  //   console.log(
+  //     'get properties',
+  //     _.map(this.props, item => {
+  //       const { address } = item;
+  //       return address;
+  //     })
+  //   );
+  // };
 
   render() {
     return (
@@ -167,7 +167,7 @@ class PropertyList extends Component {
             <h1>{this.state.properties}</h1>
           </Container> */}
 
-          {this.getProperties()}
+          {/* {this.getProperties()} */}
 
           {this.state.toggleView ? (
             <Container id="linear">

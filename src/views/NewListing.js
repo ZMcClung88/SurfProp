@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import config from '../config';
 import { Button, FormGroup, Checkbox } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaCamera } from 'react-icons/fa';

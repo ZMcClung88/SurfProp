@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Card, CardBody, CardText, Input } from 'reactstrap';
 import firebase from 'firebase';
-import config from '../config';
 import Spinner from 'react-spinkit';
 import { BrowserRouter as Router, Redirect, Link, Route, Switch, withRouter } from 'react-router-dom';
 import { loginSuccess } from '../actions';
@@ -25,7 +24,7 @@ class LoginView extends Component {
     localStorage.setItem('myCat', 'Tom');
   };
   componentDidMount = () => {
-    firebase.initializeApp(config);
+    // firebase.initializeApp(config);
     console.log('item', localStorage.getItem('myCat'));
   };
 
