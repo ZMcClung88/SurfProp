@@ -87,30 +87,33 @@ class HomeView extends Component {
             onTimeout={() => this.setState({ loaded: true })}
             timeout={7000}
           >
-            <Navbar style={this.state.loaded ? visibleStyle : hiddenStyle} fixed="top" color="light" light expand="lg">
-              <NavbarBrand href="/">SURFPROPERTY</NavbarBrand>
+            <Navbar style={this.state.loaded ? visibleStyle : hiddenStyle} fixed="top" light expand="lg">
+              <NavbarBrand style={{ color: 'white' }} href="/">
+                SURFPROPERTY
+              </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
-                    <NavLink tag={Link} to="/properties">
+                    <NavLink style={{ color: 'white' }} tag={Link} to="/properties">
                       BUY
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#">SELL</NavLink>
+                    <NavLink style={{ color: 'white' }} href="#">
+                      SELL
+                    </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#">RENT</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="#">BLOG</NavLink>
+                    <NavLink style={{ color: 'white' }} href="#">
+                      RENT
+                    </NavLink>
                   </NavItem>
                 </Nav>
               </Collapse>
             </Navbar>
 
-            <Container className="d-none d-sm-block" style={{ width: '90vw', marginLeft: '-2%' }}>
+            <Container className="d-none d-sm-block" style={{ width: '100vw', marginLeft: '-2%' }}>
               <video style={{ width: '100vw' }} id="background-video" muted="true" loop autoPlay>
                 <source src={Video} type="video/mp4" />
                 <source src={Video} type="video/ogg" />
@@ -120,14 +123,14 @@ class HomeView extends Component {
                 style={{
                   marginLeft: '0%',
                   marginTop: '-10vh',
-                  width: '100vw',
+                  width: '100%',
                   display: 'flex',
                   justifyContent: 'center'
                 }}
               >
-                <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                {/* <Col style={{ display: 'flex', justifyContent: 'center' }}>
                   <FaChevronDown style={{ color: '#fff' }} size="3em" />
-                </Col>
+                </Col> */}
               </Row>
             </Container>
 
@@ -143,7 +146,7 @@ class HomeView extends Component {
               <Map height="90vh" width="90vw" />
             </Container>
 
-            <Container
+            {/* <Container
               className="d-none d-sm-block"
               style={{
                 marginTop: '15%',
@@ -152,8 +155,8 @@ class HomeView extends Component {
                 width: '100vw'
               }}
             >
-              <MapBoxMap height="90vh" width="90vw" />
-            </Container>
+              <MapBoxMap />
+            </Container> */}
 
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>
               <div>

@@ -6,10 +6,7 @@ class MapBox extends Component {
     mapboxgl.accessToken = 'pk.eyJ1Ijoiem1jY2x1bmciLCJhIjoiY2prcTg3NDJnMDdheTNranQ2aTl4c3BlZSJ9.PPje7K1N5p5RHz3iFUkGzA';
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/dark-v9',
-      zoom: 1,
-      height: '90vh',
-      width: '90vw'
+      style: 'mapbox://styles/mapbox/dark-v9'
     });
   }
 
@@ -19,10 +16,11 @@ class MapBox extends Component {
 
   render() {
     const style = {
+      position: 'absolute',
       top: 0,
       bottom: 0,
-      width: this.props.width,
-      height: this.props.height
+      width: '100%',
+      height: '100%'
     };
 
     return <div style={style} ref={el => (this.mapContainer = el)} />;

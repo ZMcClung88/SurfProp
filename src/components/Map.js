@@ -15,13 +15,14 @@ class SimpleMap extends Component {
       lng: -86.158068
     },
     zoom: 11,
-    mapTypeControl: true
+    mapTypeControl: true,
+    tilt: 45
   };
 
-  componentDidMount = options => {
-    console.log('mounted');
-    console.log(this.props.options);
-  };
+  // componentDidMount = options => {
+  //   console.log('mounted');
+  //   console.log(this.props.options);
+  // };
 
   render() {
     return (
@@ -31,7 +32,7 @@ class SimpleMap extends Component {
           bootstrapURLKeys={{ key: API_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-          options={this.props.options}
+          options={{ mapTypeId: 'satellite' }}
           disableDefaultUI={true}
         >
           <Marker lat={39.768403} lng={-86.158068} text={'Indianapolis'} />

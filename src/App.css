@@ -17,6 +17,10 @@
   font-size: large;
 }
 
+.mapboxgl-canvas {
+  left: 0;
+}
+
 ::-webkit-scrollbar {
   width: 0px; /* remove scrollbar space */
   background: transparent; /* optional: just make scrollbar invisible */
