@@ -57,9 +57,21 @@ class HomeView extends Component {
     this.state = {
       isOpen: false,
       videoURL: '../media/Gopro_ First Person Surfing.mp4',
-      loaded: false
+      loaded: false,
+      scrolling: false
     };
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = event => {
+    event.path[1].scrollY > 400 ? this.setState({ scrolling: !this.state.scrolling }) : null;
+    console.log('the scroll things', event);
+    console.log('the scroll thingszsszzsz', event.path[1].scrollY);
+    // console.log('this.state.scrolling');
+  };
 
   toggle = () => {
     this.setState({
@@ -87,12 +99,18 @@ class HomeView extends Component {
             onTimeout={() => this.setState({ loaded: true })}
             timeout={7000}
           >
-            <Navbar style={this.state.loaded ? visibleStyle : hiddenStyle} fixed="top" light expand="lg">
+            <Navbar
+              // className={this.state.scrolling ? 'bg-dark' : ''}
+              style={this.state.loaded ? visibleStyle : hiddenStyle}
+              fixed="top"
+              light
+              className=" dark bg-dark"
+            >
               <NavbarBrand style={{ color: 'white' }} href="/">
                 SURFPROPERTY
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
-              <Collapse isOpen={this.state.isOpen} navbar>
+              <Collapse color="white" isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
                     <NavLink style={{ color: 'white' }} tag={Link} to="/properties">
@@ -138,12 +156,13 @@ class HomeView extends Component {
               className="d-none d-sm-block"
               style={{
                 marginTop: '15%',
+                marginLeft: 0,
                 display: 'flex',
                 justifyContent: 'center',
                 width: '100vw'
               }}
             >
-              <Map height="90vh" width="90vw" />
+              <Map height="100vh" width="100vw" />
             </Container>
 
             {/* <Container

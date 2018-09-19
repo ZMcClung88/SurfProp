@@ -39,6 +39,7 @@
     "react-scripts": "1.1.4",
     "react-scrollbar": "^0.5.4",
     "react-scrollbars": "0.0.5",
+    "react-scrolling-color-background": "^1.0.2",
     "react-spinkit": "^3.0.0",
     "react-spinner-material": "^1.0.17",
     "react-spinners": "^0.4.4",
