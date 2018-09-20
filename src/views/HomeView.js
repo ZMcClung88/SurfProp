@@ -159,10 +159,10 @@ class HomeView extends Component {
                 marginLeft: 0,
                 display: 'flex',
                 justifyContent: 'center',
-                width: '100vw'
+                width: '100%'
               }}
             >
-              <Map height="100vh" width="100vw" />
+              <Map height="100vh" width="97vw" />
             </Container>
 
             {/* <Container
