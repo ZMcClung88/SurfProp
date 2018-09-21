@@ -68,8 +68,8 @@ class HomeView extends Component {
 
   handleScroll = event => {
     event.path[1].scrollY > 400 ? this.setState({ scrolling: !this.state.scrolling }) : null;
-    console.log('the scroll things', event);
-    console.log('the scroll thingszsszzsz', event.path[1].scrollY);
+    // console.log('the scroll things', event);
+    // console.log('the scroll thingszsszzsz', event.path[1].scrollY);
     // console.log('this.state.scrolling');
   };
 

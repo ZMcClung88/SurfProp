@@ -79,10 +79,10 @@ class NewListing extends Component {
     console.log('state', this.state);
     const { currentUser } = firebase.auth();
     console.log('chech check', currentUser);
-    // const uid = currentUser.uid;
-    // console.log('user', uid);
-    // const ref = firebase.database().ref(`properties/property/${uid}`);
-    // ref.push(this.state);
+    const uid = currentUser.uid;
+    console.log('user', uid);
+    const ref = firebase.database().ref(`properties/${uid}`);
+    ref.push(this.state);
   };
 
   addFile = event => {
