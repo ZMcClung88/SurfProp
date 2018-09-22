@@ -85,23 +85,23 @@ class PropertyList extends Component {
     });
   };
 
-  // getProperties = props => {
-  //   const { address } = this.props;
-  //   console.log('addy', this.props);
-  //   console.log(
-  //     'get properties',
-  //     _.map(this.props, item => {
-  //       const { address } = item;
-  //       return address;
-  //     })
-  //   );
-  // };
+  getProperties = props => {
+    const { address } = this.props;
+    console.log('addy', this.props);
+    console.log(
+      'get properties',
+      _.map(this.props, item => {
+        const address = item;
+        return address;
+      })
+    );
+  };
 
   render() {
     return (
       <div>
         <Navbar color="light" light expand="lg">
-          <NavbarBrand href="/">surfProp</NavbarBrand>
+          <NavbarBrand href="/">SurfProperty</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -115,9 +115,6 @@ class PropertyList extends Component {
               </NavItem>
               <NavItem>
                 <NavLink href="#">RENT</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#">BLOG</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -167,7 +164,7 @@ class PropertyList extends Component {
             <h1>{this.state.properties}</h1>
           </Container> */}
 
-          {/* {this.getProperties()} */}
+          {this.getProperties()}
 
           {this.state.toggleView ? (
             <Container id="linear">
