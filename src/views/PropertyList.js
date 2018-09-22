@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import firebase from 'firebase';
 import config from '../config';
 import Map from '../components/Map';
+import Marker from '../components/Marker';
 import {
   Button,
   Card,
@@ -153,6 +154,16 @@ class PropertyList extends Component {
           <Row style={{ marginTop: '15%', display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
             <h1 style={{ fontSize: '16px' }}>Intoducing Surf Propertiess</h1>
             <p style={{ fontSize: '11px' }}>
+              Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
+              venenatis sit amet finibus quis, tempus in lectus.
+            </p>
+          </Row>
+          <Row
+            className="d-none d-md-block"
+            style={{ marginTop: '15%', display: 'flex', justifyContent: 'center', textAlign: 'center' }}
+          >
+            <h1 style={{ fontSize: '32px' }}>Intoducing Surf Propertiess</h1>
+            <p style={{ fontSize: '22px' }}>
               Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
               venenatis sit amet finibus quis, tempus in lectus.
             </p>

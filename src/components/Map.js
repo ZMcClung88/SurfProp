@@ -35,8 +35,9 @@ class SimpleMap extends Component {
           options={{ mapTypeId: 'satellite' }}
           disableDefaultUI={true}
         >
-          {/* <Marker lat={39.768403} lng={-86.158068} text={'Indianapolis'} /> */}
-          <AnyReactComponent options={this.props.options} text={'aaa'} />
+          <Marker lat={11.905573} lng={-86.598057} text={'Nicaragua'} />
+          <Marker lat={9.6301892} lng={-84.2541844} text={'Costa Rica'} />
+          <AnyReactComponent options={this.props.options} />
         </GoogleMapReact>
       </div>
     );
