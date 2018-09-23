@@ -35,6 +35,7 @@ import BeachHouse1 from '../media/arno-smit-141735-unsplash.jpg';
 import BeachHouse2 from '../media/niv-rozenberg-356666-unsplash.jpg';
 import BeachHouse3 from '../media/tim-cook-97924-unsplash.jpg';
 import BeachHouse4 from '../media/sterling-davis-513094-unsplash.jpg';
+import BlueMapMarker from '../media/bluemapmarker.png';
 
 class PropertyList extends Component {
   constructor(props) {
@@ -131,6 +132,17 @@ class PropertyList extends Component {
           </Row>
         </Container>
 
+        <div
+          style={{
+            border: '1px solid red',
+            height: '200px',
+            width: '200px',
+            backgroundImage: 'url(' + BlueMapMarker + ')'
+          }}
+        >
+          blah
+        </div>
+
         {/* <Container
           style={{
             height: '100px',
@@ -151,9 +163,12 @@ class PropertyList extends Component {
         </Container> */}
 
         <Container>
-          <Row style={{ marginTop: '15%', display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-            <h1 style={{ fontSize: '16px' }}>Intoducing Surf Propertiess</h1>
-            <p style={{ fontSize: '11px' }}>
+          <Row
+            className="d-md-none"
+            style={{ marginTop: '15%', display: 'flex', justifyContent: 'center', textAlign: 'center' }}
+          >
+            <h1 style={{ fontSize: '18px' }}>Intoducing Surf Propertiess</h1>
+            <p style={{ fontSize: '12px' }}>
               Donec dignissim dignissim sapien vel semper. Morbi consequat vel sapien eu tempus. Donec sapien metus,
               venenatis sit amet finibus quis, tempus in lectus.
             </p>

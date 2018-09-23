@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BlueMapMarker from '../media/bluemapmarker.png';
 
 class Marker extends Component {
   render() {
@@ -27,6 +28,7 @@ const styles = {
     fontSize: 16,
     fontWeight: 'bold',
     padding: 4
+    // backgroundImage: `url(${BlueMapMarker})`
   }
 };
 
