@@ -135,9 +135,11 @@ class PropertyList extends Component {
         <div
           style={{
             border: '1px solid red',
-            height: '200px',
-            width: '200px',
-            backgroundImage: 'url(' + BlueMapMarker + ')'
+            height: '100px',
+            width: '100px',
+            backgroundImage: 'url(' + BlueMapMarker + ')',
+            backgroundSize: 'cover',
+            bacngroundPosition: 'center'
           }}
         >
           blah
