@@ -195,7 +195,7 @@ class PropertyList extends Component {
           {this.state.toggleView ? (
             <Container id="linear">
               <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
-                <Card style={{ width: '90vw', height: '25vh' }}>
+                {/* <Card style={{ width: '90vw', height: '25vh' }}>
                   <CardImg top width="auto" height="100%" src={BeachHouse1} alt="Card image cap" />
                   <CardImgOverlay style={{ display: 'flex', flexDirection: 'column' }}>
                     <CardText
@@ -232,14 +232,32 @@ class PropertyList extends Component {
                       <small>$700/week</small>
                     </CardText>
                   </CardImgOverlay>
+                </Card> */}
+              </Row>
+              <Row style={{ justifyContent: 'center', marginTop: '10%', width: '100%' }}>
+                <Card style={{ width: '261px', height: '340px' }}>
+                  <CardImg top src={BeachHouse2} style={{ width: '100%', height: '50%' }} alt="Card image cap" />
+
+                  <CardText>
+                    <text>this si where text will go</text>
+                  </CardText>
+                </Card>
+                <Card style={{ width: '261px', height: '340px' }}>
+                  <CardImg top src={BeachHouse2} style={{ width: '100%', height: '50%' }} alt="Card image cap" />
+
+                  <CardText>
+                    <text>this si where text will go</text>
+                  </CardText>
+                </Card>
+                <Card style={{ width: '261px', height: '340px' }}>
+                  <CardImg top src={BeachHouse2} style={{ width: '100%', height: '50%' }} alt="Card image cap" />
+
+                  <CardText>
+                    <text>this si where text will go</text>
+                  </CardText>
                 </Card>
               </Row>
-              <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-                <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg top width="auto" height="100%" src={BeachHouse2} alt="Card image cap" />
-                </Card>
-              </Row>
-              <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
+              {/* <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
                 <Card style={{ width: '90vw', height: '25vh' }}>
                   <CardImg top width="auto" height="100%" src={BeachHouse3} alt="Card image cap" />
                 </Card>
@@ -248,7 +266,7 @@ class PropertyList extends Component {
                 <Card style={{ width: '90vw', height: '25vh' }}>
                   <CardImg top width="auto" height="100%" src={BeachHouse4} alt="Card image cap" />
                 </Card>
-              </Row>
+              </Row> */}
             </Container>
           ) : (
             <Container id="grid" className="d-none">
