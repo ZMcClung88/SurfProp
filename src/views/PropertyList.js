@@ -132,19 +132,6 @@ class PropertyList extends Component {
           </Row>
         </Container>
 
-        <div
-          style={{
-            border: '1px solid red',
-            height: '100px',
-            width: '100px',
-            backgroundImage: 'url(' + BlueMapMarker + ')',
-            backgroundSize: 'cover',
-            bacngroundPosition: 'center'
-          }}
-        >
-          blah
-        </div>
-
         {/* <Container
           style={{
             height: '100px',

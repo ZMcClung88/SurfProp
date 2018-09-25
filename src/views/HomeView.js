@@ -110,7 +110,7 @@ class HomeView extends Component {
                 SURFPROPERTY
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
-              <Collapse color="white" isOpen={this.state.isOpen} navbar>
+              <Collapse color="light" isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
                     <NavLink style={{ color: 'white' }} tag={Link} to="/properties">
@@ -276,39 +276,37 @@ class HomeView extends Component {
 
             <Container style={{ marginTop: '15%' }}>
               <h6 style={{ marginBottom: '5%' }}>Spots around the world</h6>
-              <Container>
-                <Row>
-                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
-                      <CardImg top width="auto" height="100%" src={CostaRicaImg} alt="Card image cap" />
-                      <CardText>Costa Rica</CardText>
-                      <CardLink onClick={this.singleProperty} />
-                    </Card>
-                  </Col>
-                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
-                      <CardImg top width="auto" height="100%" src={SouthAfricaImg} alt="Card image cap" />
-                      <CardText>South Africa</CardText>
-                      <CardLink onClick={this.singleProperty} />
-                    </Card>
-                  </Col>
-                </Row>
-                <Row style={{ display: 'flex', justifyContent: 'center' }}>
-                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
-                      <CardImg top width="auto" height="100%" src={AustraliaImg} alt="Card image cap" />
-                      <CardText>Australia</CardText>
-                      <CardLink onClick={this.singleProperty} />
-                    </Card>
-                  </Col>
-                  <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card style={{ marginBottom: '15%', width: '100%', height: '50%' }}>
-                      <CardImg top width="auto" height="100%" src={HawaiiImg} alt="Card image cap" />
-                      <CardText>Hawaii</CardText>
-                      <CardLink onClick={this.singleProperty} />
-                    </Card>
-                  </Col>
-                </Row>
+              <Container
+                style={{
+                  border: '2px solid red',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <Card style={{ width: '20%' }}>
+                  <CardImg top src={CostaRicaImg} alt="Card image cap" />
+                  <CardText>Costa Rica</CardText>
+                  <CardLink onClick={this.singleProperty} />
+                </Card>
+
+                <Card style={{ width: '20%' }}>
+                  <CardImg top src={SouthAfricaImg} alt="Card image cap" />
+                  <CardText>South Africa</CardText>
+                  <CardLink onClick={this.singleProperty} />
+                </Card>
+
+                <Card style={{ width: '20%' }}>
+                  <CardImg top src={AustraliaImg} alt="Card image cap" />
+                  <CardText>Australia</CardText>
+                  <CardLink onClick={this.singleProperty} />
+                </Card>
+
+                <Card style={{ width: '20%' }}>
+                  <CardImg top src={HawaiiImg} alt="Card image cap" />
+                  <CardText>Hawaii</CardText>
+                  <CardLink onClick={this.singleProperty} />
+                </Card>
               </Container>
               <div style={{ width: '100%', textAlign: 'center', marginBottom: '5%' }}>
                 <Button onClick={this.onClick} style={{ width: '50%' }}>
