@@ -275,37 +275,38 @@ class HomeView extends Component {
             </Container>
 
             <Container style={{ marginTop: '15%' }}>
-              <h6 style={{ marginBottom: '5%' }}>Spots around the world</h6>
+              <h6 className="d-sm-block d-md-block d-lg-none d-xl-none" style={{ marginBottom: '5%' }}>
+                Spots around the world
+              </h6>
+              <h6 className="d-none d-md-none d-lg-block d-xl-block" style={{ marginBottom: '5%', fontSize: '28px' }}>
+                Spots around the world
+              </h6>
               <Container
                 style={{
-                  border: '2px solid red',
                   display: 'flex',
                   flexDirection: 'row',
-                  justifyContent: 'space-between'
+                  justifyContent: 'space-between',
+                  marginBottom: '5%'
                 }}
               >
-                <Card style={{ width: '20%' }}>
-                  <CardImg top src={CostaRicaImg} alt="Card image cap" />
+                <Card onClick={() => console.log('click click')} style={{ width: '20%' }}>
+                  <CardImg style={{ height: '15vh' }} top src={CostaRicaImg} alt="Card image cap" />
                   <CardText>Costa Rica</CardText>
-                  <CardLink onClick={this.singleProperty} />
                 </Card>
 
                 <Card style={{ width: '20%' }}>
-                  <CardImg top src={SouthAfricaImg} alt="Card image cap" />
+                  <CardImg style={{ height: '15vh' }} top src={SouthAfricaImg} alt="Card image cap" />
                   <CardText>South Africa</CardText>
-                  <CardLink onClick={this.singleProperty} />
                 </Card>
 
                 <Card style={{ width: '20%' }}>
-                  <CardImg top src={AustraliaImg} alt="Card image cap" />
+                  <CardImg style={{ height: '15vh' }} top src={AustraliaImg} alt="Card image cap" />
                   <CardText>Australia</CardText>
-                  <CardLink onClick={this.singleProperty} />
                 </Card>
 
                 <Card style={{ width: '20%' }}>
-                  <CardImg top src={HawaiiImg} alt="Card image cap" />
+                  <CardImg style={{ height: '15vh' }} top src={HawaiiImg} alt="Card image cap" />
                   <CardText>Hawaii</CardText>
-                  <CardLink onClick={this.singleProperty} />
                 </Card>
               </Container>
               <div style={{ width: '100%', textAlign: 'center', marginBottom: '5%' }}>
