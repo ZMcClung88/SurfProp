@@ -30,16 +30,22 @@ class LoginView extends Component {
 
   onButtonClick = () => {
     // console.log('click click', this.props);
-    let email = 'z@z.com';
-    let password = 'password';
+    let email = this.state.email;
+    let password = this.state.password;
 
     localStorage.setItem('user', firebase.auth());
     this.props.loginSuccess({ email, password });
+
+    this.setState({ email: '', password: '' });
   };
 
   getUserInfo = () => {
     console.log('user info');
     console.log('user', localStorage.getItem('user'));
+  };
+
+  logout = () => {
+    localStorage.removeItem('user');
   };
 
   // onLoginFail() {
@@ -91,6 +97,7 @@ class LoginView extends Component {
 
         <CardBody>{this.renderButton()}</CardBody>
         <Button onClick={this.getUserInfo}>User?</Button>
+        <Button onClick={this.logout}>logout</Button>
       </Card>
     );
   }

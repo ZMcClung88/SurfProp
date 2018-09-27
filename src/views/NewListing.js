@@ -65,6 +65,7 @@ class NewListing extends Component {
   }
 
   componentDidMount() {
+    console.log('user', firebase.auth());
     // firebase.auth().signInAnonymously();
     // firebase.initializeApp();
   }
