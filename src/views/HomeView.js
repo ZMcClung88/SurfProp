@@ -89,10 +89,14 @@ class HomeView extends Component {
 
   render() {
     const hiddenStyle = { display: 'none' };
-    const visibleStyle = {};
+    const visibleStyle = { borderBottom: '1px solid lightgrey' };
 
     return (
-      <div>
+      <div
+        style={{
+          fontFamily: 'Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;'
+        }}
+      >
         <div style={this.state.loaded ? visibleStyle : hiddenStyle}>
           <OnImagesLoaded
             onLoaded={() => this.setState({ loaded: true })}
@@ -104,13 +108,12 @@ class HomeView extends Component {
               style={this.state.loaded ? visibleStyle : hiddenStyle}
               fixed="top"
               light
-              className=" dark bg-dark"
             >
-              <NavbarBrand style={{ color: 'white' }} href="/">
+              <NavbarBrand style={{ color: 'lightgrey' }} href="/">
                 SURFPROPERTY
               </NavbarBrand>
-              <NavbarToggler onClick={this.toggle} />
-              <Collapse color="light" isOpen={this.state.isOpen} navbar>
+              <NavbarToggler style={{ border: 'none' }} onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
                   <NavItem>
                     <NavLink style={{ color: 'white' }} tag={Link} to="/properties">
@@ -179,7 +182,7 @@ class HomeView extends Component {
 
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>
               <div>
-                <h5 style={{ color: '#c52031', textAlign: 'center', textStyle: 'Montserrat' }}>CHOOSE A CATEGORY</h5>
+                <h5 style={{ color: 'black', textAlign: 'center', textStyle: 'Montserrat' }}>CHOOSE A CATEGORY</h5>
                 <div
                   style={{
                     display: 'flex',

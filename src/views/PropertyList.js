@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase';
-import config from '../config';
+// import config from '../config';
 import Map from '../components/Map';
 import Marker from '../components/Marker';
 import {
