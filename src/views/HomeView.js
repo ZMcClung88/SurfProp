@@ -89,7 +89,7 @@ class HomeView extends Component {
 
   render() {
     const hiddenStyle = { display: 'none' };
-    const visibleStyle = { borderBottom: '1px solid lightgrey' };
+    const visibleStyle = { borderBottom: '1px solid grey' };
 
     return (
       <div
@@ -109,7 +109,7 @@ class HomeView extends Component {
               fixed="top"
               light
             >
-              <NavbarBrand style={{ color: 'lightgrey' }} href="/">
+              <NavbarBrand style={{ color: 'grey' }} href="/">
                 SURFPROPERTY
               </NavbarBrand>
               <NavbarToggler style={{ border: 'none' }} onClick={this.toggle} />
@@ -182,31 +182,35 @@ class HomeView extends Component {
 
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>
               <div>
-                <h5 style={{ color: 'black', textAlign: 'center', textStyle: 'Montserrat' }}>CHOOSE A CATEGORY</h5>
+                <h5 style={{ color: 'black', textAlign: 'center' }}>CHOOSE A CATEGORY</h5>
                 <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                    width: '100%',
-                    color: 'white'
-                  }}
+                  style={
+                    {
+                      // display: 'flex',
+                      // justifyContent: 'center',
+                      // flexDirection: 'column',
+                      // width: '100%',
+                      // color: 'white'
+                    }
+                  }
                 >
                   <MenuCards
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      height: '200px',
-                      width: '100%'
-                    }}
+                    style={
+                      {
+                        // display: 'flex',
+                        // justifyContent: 'center',
+                        // alignItems: 'center',
+                        // height: '200px',
+                        // width: '100%'
+                      }
+                    }
                     onClick={this.onBuyClick}
                     src={ArnoImg}
                     title="Buy"
                   />
 
                   <MenuCards
-                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     height={'200px'}
                     width={'100'}
                     onClick={this.onSellClick}
@@ -216,7 +220,7 @@ class HomeView extends Component {
                   />
 
                   <MenuCards
-                    style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     height={'200px'}
                     width={'100'}
                     onClick={this.onRentClick}
