@@ -67,7 +67,7 @@ class Example extends Component {
     const slides = items.map(item => {
       return (
         <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.src}>
-          <img style={{ height: '50vh', width: '100%' }} src={item.src} alt={item.altText} />
+          <img style={{ height: '70vh', width: '100%' }} src={item.src} alt={item.altText} />
           <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );

@@ -36,7 +36,7 @@ import {
   Collapse,
   Col,
   Container,
-  Navbar,
+  // Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -49,6 +49,9 @@ import {
   DropdownItem
 } from 'reactstrap';
 import MenuCards from '../components/MenuCards';
+import Navbar from '../components/Navbar';
+import Carousel2 from '../components/Carousel2';
+import Carousel from '../components/Carousel';
 
 class HomeView extends Component {
   constructor(props) {
@@ -103,7 +106,8 @@ class HomeView extends Component {
             onTimeout={() => this.setState({ loaded: true })}
             timeout={7000}
           >
-            <Navbar
+            <Navbar />
+            {/* <Navbar
               // className={this.state.scrolling ? 'bg-dark' : ''}
               style={this.state.loaded ? visibleStyle : hiddenStyle}
               fixed="top"
@@ -132,14 +136,17 @@ class HomeView extends Component {
                   </NavItem>
                 </Nav>
               </Collapse>
-            </Navbar>
+            </Navbar> */}
+
+            <Carousel2 />
+            <Carousel />
 
             <Container className="d-none d-sm-block" style={{ width: '100vw', marginLeft: '-2%' }}>
-              <video style={{ width: '100vw' }} id="background-video" muted="true" loop autoPlay>
+              {/* <video style={{ width: '100vw' }} id="background-video" muted="true" loop autoPlay>
                 <source src={Video} type="video/mp4" />
                 <source src={Video} type="video/ogg" />
                 Your browser does not support the video tag.
-              </video>
+              </video> */}
               <Row
                 style={{
                   marginLeft: '0%',
