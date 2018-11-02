@@ -21,6 +21,12 @@ import Logo from './media/4a8dfe302137ea75d20d9e9e23a46c47_taal-volcano-tagaytay
 import MediaQuery from 'react-responsive';
 import store from './store/';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faCog);
+
 class App extends Component {
   render() {
     return (

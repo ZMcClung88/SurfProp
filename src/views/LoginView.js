@@ -33,10 +33,10 @@ class LoginView extends Component {
         </header>
         <div class="container">
           <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-6 mx-auto pt-5">
               <div class="card">
                 <div class="card-header">
-                  <h4>Account Login</h4>
+                  <h4>Admin Login</h4>
                 </div>
 
                 <div class="card-body">

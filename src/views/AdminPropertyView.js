@@ -24,208 +24,82 @@ import {
 } from 'reactstrap';
 import Dropdown from '../components/Dropdown';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 class PropertyList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-      dropdownOpen: false,
-      picView: true,
-      toggleView: true
-    };
-  }
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  };
-
-  toggle2 = () => {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    });
-  };
-
-  onClick = () => {
-    console.log(this.state.toggleView);
-    this.setState({
-      toggleView: true
-    });
-  };
-
-  addProperty = () => {
-    this.props.history.push('/admin/NewListing');
-  };
-
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="lg">
-          <NavbarBrand href="/">surfProp</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem className="ml-auto">
-                <NavLink tag={Link} to="/properties">
-                  BUY
-                </NavLink>
-              </NavItem>
-              <NavItem className="ml-auto">
-                <NavLink href="#">SELL</NavLink>
-              </NavItem>
-              <NavItem className="ml-auto">
-                <NavLink href="#">RENT</NavLink>
-              </NavItem>
-              <NavItem className="ml-auto">
-                <NavLink href="#">BLOG</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+          <div className="container">
+            <a href="index.html" className="navbar-brand">
+              Surf Property
+            </a>
+            <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarCollapse">
+              <ul className="navbar-nav">
+                <li className="nav-item px-2">
+                  <a href="index.html" className="nav-link active">
+                    Dashboard
+                  </a>
+                </li>
+                <li className="nav-item px-2">
+                  <a href="posts.html" className="nav-link">
+                    Posts
+                  </a>
+                </li>
+                <li className="nav-item px-2">
+                  <a href="categories.html" className="nav-link">
+                    Categories
+                  </a>
+                </li>
+                <li className="nav-item px-2">
+                  <a href="users.html" className="nav-link">
+                    Users
+                  </a>
+                </li>
+              </ul>
 
-        <Container>
-          <Container>
-            <Button onClick={this.addProperty}>Add Property</Button>
-          </Container>
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item dropdown mr-3">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <i className="fas fa-user" /> Welcome Mark
+                  </a>
+                  <div className="dropdown-menu">
+                    <a href="profile.html" className="dropdown-item">
+                      <i className="fas fa-user-circle" /> Profile
+                    </a>
+                    <a href="settings.html" className="dropdown-item">
+                      <i className="fas fa-cog" /> Settings
+                    </a>
+                  </div>
+                </li>
+                <li className="nav-item">
+                  <a href="login.html" className="nav-link">
+                    <i className="fas fa-user-times" /> Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-          {this.state.toggleView ? (
-            <Container style={{ border: '1px solid green' }} id="linear">
-              <Row style={{ justifyContent: 'center', marginTop: '20%' }}>
-                <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="auto"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-              </Row>
-              <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-                <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-              </Row>
-              <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-                <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-              </Row>
-              <Row style={{ justifyContent: 'center', marginTop: '10%' }}>
-                <Card style={{ width: '90vw', height: '25vh' }}>
-                  <CardImg
-                    top
-                    width="auto"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-              </Row>
-            </Container>
-          ) : (
-            <Container id="grid" className="d-none">
-              <Row style={{ justifyContent: 'space-between', marginTop: '5%' }}>
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-              </Row>
-
-              <Row style={{ justifyContent: 'space-between', marginTop: '5%' }}>
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-
-                <Card style={{ width: '150px', height: '150px' }}>
-                  <CardImg
-                    width="100%"
-                    height="100%"
-                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                    alt="Card image cap"
-                  />
-                </Card>
-              </Row>
-            </Container>
-          )}
-        </Container>
+        <header id="main-header" className="py-2 bg-primary text-white">
+          <div class="container">
+            <div className="row">
+              <div className="col-md-6">
+                <h1>
+                  <FontAwesomeIcon name="rocket" /> Dashboard
+                </h1>
+              </div>
+            </div>
+          </div>
+        </header>
       </div>
     );
   }
 }
-
-const styles = {
-  buttonStyle: {
-    height: '20px',
-    width: '100px'
-  }
-};
 
 export default withRouter(PropertyList);
