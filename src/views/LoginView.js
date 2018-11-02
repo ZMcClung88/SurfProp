@@ -9,114 +9,56 @@ import { loginSuccess } from '../actions';
 import HomeView from './HomeView';
 
 class LoginView extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      email: '',
-      password: '',
-      error: '',
-      loading: false,
-      redirect: false
-    };
-  }
-  componentWillMount = () => {
-    localStorage.setItem('myCat', 'Tom');
-  };
-  componentDidMount = () => {
-    // firebase.initializeApp(config);
-    console.log('item', localStorage.getItem('myCat'));
-  };
-
-  onButtonClick = () => {
-    // console.log('click click', this.props);
-    let email = this.state.email;
-    let password = this.state.password;
-
-    localStorage.setItem('user', firebase.auth());
-    this.props.loginSuccess({ email, password });
-
-    this.setState({ email: '', password: '' });
-  };
-
-  getUserInfo = () => {
-    console.log('user info');
-    console.log('user', localStorage.getItem('user'));
-  };
-
-  logout = () => {
-    localStorage.removeItem('user');
-  };
-
-  // onLoginFail() {
-  //   this.setState({ error: 'Authentication Failed', loading: false });
-  // }
-  //
-  // onLoginSuccess = () => {
-  //   this.setState({
-  //     email: '',
-  //     password: '',
-  //     loading: false,
-  //     error: '',
-  //     redirect: true
-  //   });
-  //   this.props.history.push('/admin/NewListing');
-  // };
-
-  renderButton() {
-    if (this.state.loading) {
-      return <Spinner size="small" />;
-    }
-
-    return <Button onClick={this.onButtonClick}>Log in</Button>;
-  }
-
   render() {
     return (
-      <Card>
-        <CardBody>
-          <Input
-            placeholder="user@gmail.com"
-            label="Email"
-            value={this.state.email}
-            onChange={event => this.setState({ email: event.target.value })}
-          />
-        </CardBody>
+      <div>
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+          <div className="container">
+            <a href="index.html" className="navbar-brand">
+              Surf Property
+            </a>
+          </div>
+        </nav>
 
-        <CardBody>
-          <Input
-            secureTextEntry
-            placeholder="password"
-            label="Password"
-            value={this.state.password}
-            onChange={event => this.setState({ password: event.target.value })}
-          />
-        </CardBody>
+        <header id="main-header" class="py-2 bg-primary text-white">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <h1>
+                  <i className="fas fa-user" /> SP Admin
+                </h1>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Account Login</h4>
+                </div>
 
-        <CardText style={styles.errorTextStyle}>{this.state.error}</CardText>
-
-        <CardBody>{this.renderButton()}</CardBody>
-        <Button onClick={this.getUserInfo}>User?</Button>
-        <Button onClick={this.logout}>logout</Button>
-      </Card>
+                <div class="card-body">
+                  <form action="index.html">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" />
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-const styles = {
-  errorTextStyle: {
-    fontSize: 20,
-    alignSelf: 'center',
-    color: 'red'
-  }
-};
-
-const mapStateToProps = state => {
-  const uid = state;
-  console.log('chirp chirp', uid);
-  return {
-    uid: state.uid
-  };
-};
-
-export default withRouter(connect(mapStateToProps, { loginSuccess })(LoginView));
+export default LoginView;
