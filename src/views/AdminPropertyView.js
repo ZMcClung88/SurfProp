@@ -90,9 +90,7 @@ class PropertyList extends Component {
           <div class="container">
             <div className="row">
               <div className="col-md-6">
-                <h1>
-                  <FontAwesomeIcon name="rocket" /> Dashboard
-                </h1>
+                <h1>Dashboard</h1>
               </div>
             </div>
           </div>
