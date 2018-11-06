@@ -71,9 +71,6 @@ class HomeView extends Component {
 
   handleScroll = event => {
     event.path[1].scrollY > 400 ? this.setState({ scrolling: !this.state.scrolling }) : null;
-    // console.log('the scroll things', event);
-    // console.log('the scroll thingszsszzsz', event.path[1].scrollY);
-    // console.log('this.state.scrolling');
   };
 
   toggle = () => {
@@ -107,36 +104,6 @@ class HomeView extends Component {
             timeout={7000}
           >
             <Navbar />
-            {/* <Navbar
-              // className={this.state.scrolling ? 'bg-dark' : ''}
-              style={this.state.loaded ? visibleStyle : hiddenStyle}
-              fixed="top"
-              light
-            >
-              <NavbarBrand style={{ color: 'grey' }} href="/">
-                SURFPROPERTY
-              </NavbarBrand>
-              <NavbarToggler style={{ border: 'none' }} onClick={this.toggle} />
-              <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav navbar>
-                  <NavItem>
-                    <NavLink style={{ color: 'white' }} tag={Link} to="/properties">
-                      BUY
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink style={{ color: 'white' }} href="#">
-                      SELL
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink style={{ color: 'white' }} href="#">
-                      RENT
-                    </NavLink>
-                  </NavItem>
-                </Nav>
-              </Collapse>
-            </Navbar> */}
 
             <Carousel2 />
             <Carousel />
@@ -155,11 +122,7 @@ class HomeView extends Component {
                   display: 'flex',
                   justifyContent: 'center'
                 }}
-              >
-                {/* <Col style={{ display: 'flex', justifyContent: 'center' }}>
-                  <FaChevronDown style={{ color: '#fff' }} size="3em" />
-                </Col> */}
-              </Row>
+              />
             </Container>
 
             <Container
@@ -175,18 +138,6 @@ class HomeView extends Component {
               <Map height="100vh" width="97vw" />
             </Container>
 
-            {/* <Container
-              className="d-none d-sm-block"
-              style={{
-                marginTop: '15%',
-                display: 'flex',
-                justifyContent: 'center',
-                width: '100vw'
-              }}
-            >
-              <MapBoxMap />
-            </Container> */}
-
             <Container id="menu_container" className="d-md-none" style={{ marginTop: '35%', overflow: 'hidden' }}>
               <div>
                 <h5 style={{ color: 'black', textAlign: 'center' }}>CHOOSE A CATEGORY</h5>
@@ -201,23 +152,9 @@ class HomeView extends Component {
                     }
                   }
                 >
-                  <MenuCards
-                    style={
-                      {
-                        // display: 'flex',
-                        // justifyContent: 'center',
-                        // alignItems: 'center',
-                        // height: '200px',
-                        // width: '100%'
-                      }
-                    }
-                    onClick={this.onBuyClick}
-                    src={ArnoImg}
-                    title="Buy"
-                  />
+                  <MenuCards onClick={this.onBuyClick} src={ArnoImg} title="Buy" />
 
                   <MenuCards
-                    // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     height={'200px'}
                     width={'100'}
                     onClick={this.onSellClick}
@@ -226,14 +163,7 @@ class HomeView extends Component {
                     title="Sell"
                   />
 
-                  <MenuCards
-                    // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                    height={'200px'}
-                    width={'100'}
-                    onClick={this.onRentClick}
-                    src={NivImg}
-                    title="Rent"
-                  />
+                  <MenuCards height={'200px'} width={'100'} onClick={this.onRentClick} src={NivImg} title="Rent" />
                 </div>
               </div>
             </Container>
