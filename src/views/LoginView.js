@@ -38,6 +38,54 @@ class LoginView extends Component {
             <a href="index.html" className="navbar-brand">
               Surf Property
             </a>
+            <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarCollapse">
+              <ul className="navbar-nav">
+                <li className="nav-item px-2">
+                  <a href="index.html" className="nav-link">
+                    Dashboard
+                  </a>
+                </li>
+                <li className="nav-item px-2">
+                  <a href="posts.html" className="nav-link">
+                    Posts
+                  </a>
+                </li>
+                <li className="nav-item px-2">
+                  <a href="categories.html" className="nav-link">
+                    Categories
+                  </a>
+                </li>
+                <li className="nav-item px-2">
+                  <a href="users.html" className="nav-link">
+                    Users
+                  </a>
+                </li>
+              </ul>
+
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item dropdown mr-3">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <i className="fas fa-user" /> Welcome Mark
+                  </a>
+                  <div className="dropdown-menu">
+                    <a href="profile.html" className="dropdown-item">
+                      <i className="fas fa-user-circle" /> Profile
+                    </a>
+                    <a href="settings.html" className="dropdown-item">
+                      <i className="fas fa-cog" /> Settings
+                    </a>
+                  </div>
+                </li>
+                <li className="nav-item">
+                  <a href="login.html" className="nav-link">
+                    <i className="fas fa-user-times" /> Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
 
