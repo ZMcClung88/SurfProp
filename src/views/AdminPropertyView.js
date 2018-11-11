@@ -55,10 +55,13 @@ class PropertyList extends Component {
                     Categories
                   </a>
                 </li>
+                //{' '}
                 <li className="nav-item px-2">
+                  //{' '}
                   <a href="users.html" className="nav-link">
-                    Users
+                    // Users //{' '}
                   </a>
+                  //{' '}
                 </li>
               </ul>
 
